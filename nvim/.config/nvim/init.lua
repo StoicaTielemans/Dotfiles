@@ -584,6 +584,7 @@ require('lazy').setup({
         --
         marksman = {},
         markdown_oxide = {},
+        hyprls = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
