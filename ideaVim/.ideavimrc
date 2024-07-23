@@ -59,11 +59,7 @@ set highlightedyank
 " active nerdtree
 set nerdtree
 
-
-set surround
-set highlightedyank
 set sneak
-set nerdtree
 
 " Easymotion settings
 set easymotion
