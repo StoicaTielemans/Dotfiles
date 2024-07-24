@@ -1,0 +1,95 @@
+icons_format = "{icon}"
+
+[theme]
+theme = "ctp-mocha"
+
+[icons]
+icons = "awesome4"
+
+[[block]]
+block = "nvidia_gpu"
+interval = 1
+format = " $icon $utilization (\uf2c9 $temperature C)"
+[block.theme_overrides]
+idle_bg = "#fab387"
+idle_fg = "#1e1e2e"
+
+[[block]]
+block = "memory"
+format = " \uefc5 $mem_used_percents.eng(w:1) "
+format_alt = " $icon_swap $swap_free.eng(w:3,u:B,p:Mi)/$swap_total.eng(w:3,u:B,p:Mi)($swap_used_percents.eng(w:2))"
+interval = 30
+critical_mem = 90
+[block.theme_overrides]
+idle_bg = "#f9e2af"
+idle_fg = "#1e1e2e"
+
+[[block]]
+block = "cpu"
+format = "\uf4bc $utilization"
+critical_cpu = 80
+[block.theme_overrides]
+idle_bg = "#a6e3a1"
+idle_fg = "#1e1e2e"
+
+[[block]]
+block = "temperature"
+format = "($icon $max C)"
+format_alt = " $icon $min min, $max max, $average avg "
+interval = 5
+chip = "*-isa-*"
+scale = "celsius"
+[block.theme_overrides]
+idle_bg = "#a6e3a1"
+idle_fg = "#1e1e2e"
+
+[[block]]
+block = "net"
+format = "$icon $speed_down.eng(prefix:K)"
+format_alt = " $icon \uea9d$speed_down.eng(prefix:K) \ueaa0$speed_up.eng(prefix:K) {$signal_strength $ssid $frequency|Wired} via $device "
+[block.theme_overrides]
+idle_bg = "#74c7ec"
+idle_fg = "#1e1e2e"
+
+[[block]]
+block = "sound"
+driver = "pulseaudio"
+max_vol = 70
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
+[block.theme_overrides]
+idle_bg = "#f5c2e7"
+idle_fg = "#1e1e2e"
+
+[[block]]
+block = "sound"
+driver = "pulseaudio"
+device_kind = "source"
+[block.theme_overrides]
+idle_bg = "#f5c2e7"
+idle_fg = "#1e1e2e"
+
+[[block]]
+block = "time"
+interval = 5
+format = " \uf133 $timestamp.datetime(f:'%a %d/%m %R') "
+[block.theme_overrides]
+idle_bg = "#cba6f7"
+idle_fg = "#1e1e2e"
+
+[[block]]
+block = "menu"
+text = " \uf011  "
+[[block.items]]
+display = " -&gt;Logout&lt;-"
+cmd = "i3-msg exit"
+confirm_msg = "Are you sure you want to logout?"
+[[block.items]]
+display = " -&gt;Power Off&lt;-"
+cmd = "poweroff"
+confirm_msg = "Are you sure you want to power off?"
+[[block.items]]
+display = " -&gt;Reboot&lt;-"
+cmd = "reboot"
+confirm_msg = "Are you sure you want to reboot?"

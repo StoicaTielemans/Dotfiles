@@ -7,9 +7,9 @@
 // define colors etc.
 * {
     bg: #1e1e2e;
-    hv: #9274ca; 
-    primary: #9274ca; 
-    ug: #0B2447;
+    hv: #181825; 
+    primary: #f5c2e7; 
+    ug: #f5c2e7;
     font: "Monospace 11";
     background-color: @bg;
     //dark: @bg;
