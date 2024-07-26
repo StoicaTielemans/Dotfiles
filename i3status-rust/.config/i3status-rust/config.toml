@@ -7,9 +7,15 @@ theme = "ctp-mocha"
 icons = "awesome4"
 
 [[block]]
+block = "focused_window"
+[block.format]
+full = " $title.str(max_w:55) |"
+short = " $title.str(max_w:30) |"
+
+[[block]]
 block = "nvidia_gpu"
 interval = 1
-format = " $icon $utilization (\uf2c9 $temperature C)"
+format = "  $icon $utilization (\uf2c9 $temperature C)"
 [block.theme_overrides]
 idle_bg = "#fab387"
 idle_fg = "#1e1e2e"
@@ -26,7 +32,7 @@ idle_fg = "#1e1e2e"
 
 [[block]]
 block = "cpu"
-format = "\uf4bc $utilization"
+format = " \uf4bc $utilization"
 critical_cpu = 80
 [block.theme_overrides]
 idle_bg = "#a6e3a1"
@@ -45,7 +51,7 @@ idle_fg = "#1e1e2e"
 
 [[block]]
 block = "net"
-format = "$icon $speed_down.eng(prefix:K)"
+format = " $icon $speed_down.eng(prefix:K) "
 format_alt = " $icon \uea9d$speed_down.eng(prefix:K) \ueaa0$speed_up.eng(prefix:K) {$signal_strength $ssid $frequency|Wired} via $device "
 [block.theme_overrides]
 idle_bg = "#74c7ec"
@@ -66,6 +72,9 @@ idle_fg = "#1e1e2e"
 block = "sound"
 driver = "pulseaudio"
 device_kind = "source"
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
 [block.theme_overrides]
 idle_bg = "#f5c2e7"
 idle_fg = "#1e1e2e"
