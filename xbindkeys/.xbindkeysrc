@@ -1,8 +1,12 @@
-# Unmute the default source when mouse button 8 is pressed
-"pactl set-source-mute @DEFAULT_SOURCE@ 0"
-    b:8
+## Unmute the default source when mouse button 8 is pressed
+#"pactl set-source-mute @DEFAULT_SOURCE@ 0"
+#    b:8
+#
+## Mute the default source when mouse button 8 is released
+#"pactl set-source-mute @DEFAULT_SOURCE@ 1"
+#    b:8 + Release
 
-# Mute the default source when mouse button 8 is released
-"pactl set-source-mute @DEFAULT_SOURCE@ 1"
-    b:8 + Release
+#remap mouse button to remove back
+"xte 'mouseclick 10'"
+    b:8
 
