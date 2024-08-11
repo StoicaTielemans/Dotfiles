@@ -47,6 +47,11 @@ exec_always feh --randomize --bg-fill ~/Pictures/Background/*
 # -f for enable fading effect when switch between workspaces and other stuff
 exec_always picom -f
 
+
+#auto tiling
+#https://github.com/nwg-piotr/autotiling
+exec_always autotiling
+
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
@@ -136,10 +141,13 @@ bindsym $mod+Shift+Right move right
 #printscreen 
 bindsym Print exec spectacle -r
 # split in horizontal orientation
-#bindsym $mod+h split h
+bindsym $mod+c split h
 
 # split in vertical orientation
-#bindsym $mod+v split v
+bindsym $mod+v split v
+
+#lock screen
+bindsym $mod+mod1+l exec i3lock-fancy
 
 # enter fullscreen mode for the focused container
 bindsym $mod+b fullscreen toggle

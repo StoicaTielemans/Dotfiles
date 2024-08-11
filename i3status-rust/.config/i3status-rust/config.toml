@@ -13,12 +13,25 @@ full = " $title.str(max_w:55) |"
 short = " $title.str(max_w:30) |"
 
 [[block]]
+block = "music"
+format = "{ \uf1bc $combo.str(max_w:25) $play  $next  |}"
+player = "spotify"
+[block.theme_overrides]
+idle_bg = "#eba0ac"
+info_bg = "#eba0ac"
+idle_fg = "#1e1e2e"
+
+[[block]]
 block = "nvidia_gpu"
 interval = 1
-format = "  $icon $utilization (\uf2c9 $temperature C)"
+format = "  $icon $utilization (\uf2c9 $temperature C) "
 [block.theme_overrides]
 idle_bg = "#fab387"
 idle_fg = "#1e1e2e"
+info_bg = "#fab387"
+info_fg = "#1e1e2e"
+good_bg = "#fab387"
+good_fg = "#1e1e2e"
 
 [[block]]
 block = "memory"
@@ -29,14 +42,22 @@ critical_mem = 90
 [block.theme_overrides]
 idle_bg = "#f9e2af"
 idle_fg = "#1e1e2e"
+info_bg = "#f9e2af"
+info_fg = "#1e1e2e"
+good_bg = "#f9e2af"
+good_fg = "#1e1e2e"
 
 [[block]]
 block = "cpu"
-format = " \uf4bc $utilization"
+format = " \uf4bc $utilization "
 critical_cpu = 80
 [block.theme_overrides]
 idle_bg = "#a6e3a1"
 idle_fg = "#1e1e2e"
+info_bg = "#a6e3a1"
+info_fg = "#1e1e2e"
+good_bg = "#a6e3a1"
+good_fg = "#1e1e2e"
 
 [[block]]
 block = "temperature"
@@ -46,8 +67,12 @@ interval = 5
 chip = "*-isa-*"
 scale = "celsius"
 [block.theme_overrides]
-idle_bg = "#a6e3a1"
+idle_bg = "#74c7ec"
 idle_fg = "#1e1e2e"
+info_bg = "#74c7ec"
+info_fg = "#1e1e2e"
+good_bg = "#74c7ec"
+good_fg = "#1e1e2e"
 
 [[block]]
 block = "net"
@@ -56,6 +81,12 @@ format_alt = " $icon \uea9d$speed_down.eng(prefix:K) \ueaa0$speed_up.eng(prefix:
 [block.theme_overrides]
 idle_bg = "#74c7ec"
 idle_fg = "#1e1e2e"
+info_bg = "#74c7ec"
+info_fg = "#1e1e2e"
+good_bg =  "#74c7ec"
+good_fg = "#1e1e2e"
+#warning_bg =
+#warning_fg =
 
 [[block]]
 block = "sound"
