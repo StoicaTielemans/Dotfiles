@@ -125,9 +125,14 @@ idle_fg = "#1e1e2e"
 [[block]]
 block = "battery"
 missing_format = ""
-format = " $percentage {$time | } "
-#device = "DisplayDevice"
-#driver = "upower"
+format = " $icon $percentage "
+[block.theme_overrides]
+idle_bg = "#cba6f7"
+idle_fg = "#1e1e2e"
+info_bg = "#cba6f7"
+info_fg = "#1e1e2e"
+good_bg = "#cba6f7"
+good_fg = "#1e1e2e"
 
 
 [[block]]
