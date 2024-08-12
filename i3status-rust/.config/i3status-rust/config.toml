@@ -121,6 +121,15 @@ cmd = "kitty calcurse"
 idle_bg = "#cba6f7"
 idle_fg = "#1e1e2e"
 
+
+[[block]]
+block = "battery"
+missing_format = ""
+format = " $percentage {$time | } "
+#device = "DisplayDevice"
+#driver = "upower"
+
+
 [[block]]
 block = "menu"
 text = " \uf011  "
