@@ -37,8 +37,8 @@ smart_gaps on
 
 
 # enable second monitor
-exec_always xrandr --output DP-2 --auto 
-exec_always xrandr --output DP-4 --auto --right-of DP-2 
+#exec_always xrandr --output DP-2 --auto 
+#exec_always xrandr --output DP-4 --auto --right-of DP-2 
 
 # wallpaper with feh from dir
 exec_always feh --randomize --bg-fill ~/Pictures/Background/*
@@ -61,7 +61,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -69,7 +69,7 @@ exec --no-startup-id nm-applet
 
 
 #rebind mouse button to remove forward and back
-exec xbindkeys
+#exec xbindkeys
 # keybinds for push to talk 
 #exec xbindkeys
 
@@ -262,7 +262,7 @@ bindsym $mod+mod1+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 bar {
-    tray_output primary
+    tray_output ePD-1
     output eDP-1
     strip_workspace_numbers yes
     font pango:JetBrainsMono Nerd Font, FontAwesome 13
@@ -278,30 +278,30 @@ bar {
         urgent_workspace #2f343a #e64553 #ffffff
     }
 }
-bar {
-    output DP-4
-    strip_workspace_numbers yes
-    font pango:JetBrainsMono Nerd Font, FontAwesome 13
-    position top
-    status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
-    colors {
-        separator #666666
-        background #1e1e2e
-        statusline #dddddd
-        focused_workspace #f5c2e7 #f5c2e7 #000000
-        active_workspace #181825 #181825 #ffffff
-        inactive_workspace #181825 #181825 #888888
-        urgent_workspace #2f343a #e64553 #ffffff
-    }
-}
+#bar {
+#    output DP-4
+#    strip_workspace_numbers yes
+#    font pango:JetBrainsMono Nerd Font, FontAwesome 13
+#    position top
+#    status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
+#    colors {
+#        separator #666666
+#        background #1e1e2e
+#        statusline #dddddd
+#        focused_workspace #f5c2e7 #f5c2e7 #000000
+#        active_workspace #181825 #181825 #ffffff
+#        inactive_workspace #181825 #181825 #888888
+#        urgent_workspace #2f343a #e64553 #ffffff
+#    }
+#}
 # finds out, if ava#d20f39ilable)
 
 
 #startup apps
-exec --no-startup-id i3-msg 'workspace $ws6;exec /usr/bin/firefox'
-exec --no-startup-id i3-msg 'workspace $ws2;exec /usr/bin/steam'
+#exec --no-startup-id i3-msg 'workspace $ws6;exec /usr/bin/firefox'
+#exec --no-startup-id i3-msg 'workspace $ws2;exec /usr/bin/steam'
 
 
 #lock application to workspace
 # Assign to the workspace with number 8, regardless of name
-assign [class="mpv"] → number 8
+#assign [class="mpv"] → number 8

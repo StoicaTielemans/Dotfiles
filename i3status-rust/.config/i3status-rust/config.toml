@@ -21,17 +21,17 @@ idle_bg = "#eba0ac"
 info_bg = "#eba0ac"
 idle_fg = "#1e1e2e"
 
-[[block]]
-block = "nvidia_gpu"
-interval = 1
-format = "  $icon $utilization (\uf2c9 $temperature C) "
-[block.theme_overrides]
-idle_bg = "#fab387"
-idle_fg = "#1e1e2e"
-info_bg = "#fab387"
-info_fg = "#1e1e2e"
-good_bg = "#fab387"
-good_fg = "#1e1e2e"
+#[[block]]
+#block = "nvidia_gpu"
+#interval = 1
+#format = "  $icon $utilization (\uf2c9 $temperature C) "
+#[block.theme_overrides]
+#idle_bg = "#fab387"
+#idle_fg = "#1e1e2e"
+#info_bg = "#fab387"
+#info_fg = "#1e1e2e"
+#good_bg = "#fab387"
+#good_fg = "#1e1e2e"
 
 [[block]]
 block = "memory"
