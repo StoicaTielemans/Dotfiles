@@ -161,7 +161,7 @@ vim.opt.scrolloff = 15
 vim.keymap.set('n', '-', '<CMD>Oil --float <CR>', { desc = 'Open parent directory' })
 
 -- copy to clipboard pc
-vim.keymap.set('n', '<leader>y', '"+y', { desc = 'copy to clipboard' })
+vim.keymap.set('n', '<leader>y', '"+y')
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true

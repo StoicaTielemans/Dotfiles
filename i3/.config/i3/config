@@ -37,7 +37,8 @@ smart_gaps on
 
 
 # enable second monitor
-#exec_always xrandr --output DP-2 --auto 
+#exec_always xrandr --output eDP-1 --mode 1920x1200 --primary
+exec_always xrandr --output eDP-1  --primary --auto --scale 0.7
 #exec_always xrandr --output DP-4 --auto --right-of DP-2 
 
 # wallpaper with feh from dir
@@ -61,7 +62,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -91,7 +92,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+t exec kitty
+bindsym $mod+t exec kitty zsh
 
 # file manager nemo
 bindsym $mod+e exec thunar
