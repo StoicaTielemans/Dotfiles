@@ -133,20 +133,38 @@ info_bg = "#cba6f7"
 info_fg = "#1e1e2e"
 good_bg = "#cba6f7"
 good_fg = "#1e1e2e"
+[[block.click]]
+button = "left"
+cmd = "~/.config/i3/scripts/power-profiles"
 
+[[block]]
+block = "backlight"
+#device = "intel_backlight"
+cycle = [10, 100]
+missing_format = ""
 
 [[block]]
 block = "menu"
 text = " \uf011  "
 [[block.items]]
-display = " -&gt;Logout&lt;-"
-cmd = "i3-msg exit"
-confirm_msg = "Are you sure you want to logout?"
+display = " -&gt;Power Menu&lt;-"
+cmd = "~/.config/i3/scripts/powermenu"
 [[block.items]]
-display = " -&gt;Power Off&lt;-"
-cmd = "poweroff"
-confirm_msg = "Are you sure you want to power off?"
-[[block.items]]
-display = " -&gt;Reboot&lt;-"
-cmd = "reboot"
-confirm_msg = "Are you sure you want to reboot?"
+display = " -&gt;Power Profile&lt;-"
+cmd = "~/.config/i3/scripts/power-profiles"
+
+#[[block]]
+#block = "menu"
+#text = " \uf011  "
+#[[block.items]]
+#display = " -&gt;Logout&lt;-"
+#cmd = "i3-msg exit"
+#confirm_msg = "Are you sure you want to logout?"
+#[[block.items]]
+#display = " -&gt;Power Off&lt;-"
+#cmd = "poweroff"
+#confirm_msg = "Are you sure you want to power off?"
+#[[block.items]]
+#display = " -&gt;Reboot&lt;-"
+#cmd = "reboot"
+#confirm_msg = "Are you sure you want to reboot?"
