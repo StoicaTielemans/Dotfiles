@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+profile=$(powerprofilesctl get)
+
+if [ "$profile" = "power-saver" ]; then
+	echo "   "
+fi
+if [ "$profile" = "performance" ]; then
+	echo "   "
+fi
+if [ "$profile" = "balanced" ]; then
+	echo "   "
+fi
+
