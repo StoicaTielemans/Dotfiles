@@ -47,6 +47,8 @@ zstyle :compinstall filename '/home/stick/.zshrc'
 export EDITOR="nvim"
 export VISUAL="nvim" 
 alias ls='eza'
+alias powermenu='~/.config/i3/scripts/powermenu'
+alias powerprofile='~/.config/i3/scripts/power-profiles'
 alias ll='eza -al'
 alias tree='eza --tree'
 alias vnat='sudo virsh net-start default'
