@@ -137,22 +137,49 @@ good_fg = "#1e1e2e"
 button = "left"
 cmd = "~/.config/i3/scripts/power-profiles"
 
+#[[block]]
+#block = "custom"
+#command = '~/.config/i3/scripts/status_power_profile'
+#interval = 5
+#[block.theme_overrides]
+#idle_bg = "#cba6f7"
+#idle_fg = "#1e1e2e"
+#info_bg = "#cba6f7"
+#info_fg = "#1e1e2e"
+#good_bg = "#cba6f7"
+#good_fg = "#1e1e2e"
+#[[block.click]]
+#button = "left"
+#cmd = "~/.config/i3/scripts/power-profiles"
+
+
+
 [[block]]
 block = "backlight"
 #device = "intel_backlight"
-cycle = [10, 100]
+invert_icons = true
+#cycle = [100,90,80,70,60,50,40,30,20,10]
+cycle = [10,20,30,40,50,60,70,80,90, 100]
 missing_format = ""
 
-[[block]]
-block = "menu"
-text = " \uf011  "
-[[block.items]]
-display = " -&gt;Power Menu&lt;-"
-cmd = "~/.config/i3/scripts/powermenu"
-[[block.items]]
-display = " -&gt;Power Profile&lt;-"
-cmd = "~/.config/i3/scripts/power-profiles"
 
+[[block]]
+block = "custom"
+format = " \uf011  "
+command = " "
+[[block.click]]
+button = "left"
+cmd = "~/.config/i3/scripts/powermenu"
+
+#[[block]]
+#block = "menu"
+#text = " \uf011  "
+#[[block.items]]
+#display = " -&gt;Power Menu&lt;-"
+#cmd = "~/.config/i3/scripts/powermenu"
+#[[block.items]]
+#display = " -&gt;Power Profile&lt;-"
+#cmd = "~/.config/i3/scripts/power-profiles"
 #[[block]]
 #block = "menu"
 #text = " \uf011  "
@@ -168,3 +195,4 @@ cmd = "~/.config/i3/scripts/power-profiles"
 #display = " -&gt;Reboot&lt;-"
 #cmd = "reboot"
 #confirm_msg = "Are you sure you want to reboot?"
+
