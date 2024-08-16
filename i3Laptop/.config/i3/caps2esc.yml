@@ -1,0 +1,7 @@
+keymap:
+  - name: Change Caps Lock to Escape on press and Control on hold
+    remap:
+      - key: CAPSLOCK
+        press: ESCAPE
+        hold: CONTROL_LEFT
+
