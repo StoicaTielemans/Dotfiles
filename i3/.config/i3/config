@@ -40,6 +40,9 @@ smart_gaps on
 exec_always xrandr --output DP-2 --auto --primary
 exec_always xrandr --output DP-4 --auto --right-of DP-2 
 
+#run easy effect (headset Eq)
+exec_always easyeffects --gapplication-service -l My
+
 # wallpaper with feh from dir
 exec_always feh --randomize --bg-fill ~/Pictures/Background/*
 
@@ -94,7 +97,7 @@ tiling_drag modifier titlebar
 bindsym $mod+t exec kitty
 
 # file manager nemo
-bindsym $mod+e exec thunar
+bindsym $mod+e exec nemo
 
 #firefox
 bindsym $mod+f exec firefox
