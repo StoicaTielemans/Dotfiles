@@ -54,6 +54,7 @@ alias powerprofile='~/.config/i3/scripts/power-profiles'
 alias ll='eza -al'
 alias tree='eza --tree'
 alias vnat='sudo virsh net-start default'
+alias XRDP='sudo systemctl start xrdp.service'
 
 autoload -Uz compinit
 compinit

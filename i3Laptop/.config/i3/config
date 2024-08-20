@@ -95,7 +95,7 @@ tiling_drag modifier titlebar
 bindsym $mod+t exec kitty zsh
 
 # file manager nemo
-bindsym $mod+e exec thunar
+bindsym $mod+e exec nemo
 
 #firefox
 bindsym $mod+f exec firefox
@@ -232,7 +232,9 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+mod1+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#power menu
+bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -263,7 +265,7 @@ bindsym $mod+mod1+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 bar {
-    tray_output ePD-1
+    tray_output primary
     output eDP-1
     strip_workspace_numbers yes
     font pango:JetBrainsMono Nerd Font 13
