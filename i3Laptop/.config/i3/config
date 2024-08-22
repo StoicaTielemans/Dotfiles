@@ -89,7 +89,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 5%+ && $refresh
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%- && $refresh_i3status
 
 
-bindcode 133 exec --no-startup-id ~/.config/i3/scripts/touchpad_toggle.sh
+bindsym $mod+F5 exec --no-startup-id ~/.config/i3/scripts/touchpad_toggle.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
