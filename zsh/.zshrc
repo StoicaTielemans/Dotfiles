@@ -125,3 +125,4 @@ function yy() {
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/go/bin

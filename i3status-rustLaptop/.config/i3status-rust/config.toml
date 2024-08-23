@@ -91,7 +91,7 @@ good_fg = "#1e1e2e"
 [[block]]
 block = "sound"
 driver = "pulseaudio"
-max_vol = 70
+#max_vol = 70
 [[block.click]]
 button = "left"
 cmd = "pavucontrol"
