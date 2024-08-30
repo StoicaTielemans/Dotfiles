@@ -54,6 +54,7 @@ alias powerprofile='~/.config/i3/scripts/power-profiles'
 alias ll='eza -al'
 alias tree='eza --tree'
 alias vnat='sudo virsh net-start default'
+alias r2modman='r2modman --no-sandbox'
 
 autoload -Uz compinit
 compinit

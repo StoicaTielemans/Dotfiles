@@ -100,7 +100,7 @@ bindsym $mod+t exec kitty
 bindsym $mod+e exec nemo
 
 #firefox
-bindsym $mod+f exec firefox
+bindsym $mod+f exec flatpak run io.github.zen_browser.zen
 
 #discord
 #vesktop as alternative
@@ -211,6 +211,7 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+# extra keybind for easy use 1 hand
 bindsym $mod+control+1 workspace number $ws6
 bindsym $mod+control+2 workspace number $ws7
 bindsym $mod+control+3 workspace number $ws8
@@ -228,6 +229,12 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+# extra keybind for easy use 1 hand
+bindsym $mod+Shift+control+1 move container to workspace number $ws6
+bindsym $mod+Shift+control+2 move container to workspace number $ws7
+bindsym $mod+Shift+control+3 move container to workspace number $ws8
+bindsym $mod+Shift+control+4 move container to workspace number $ws9
+bindsym $mod+Shift+control+5 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -301,8 +308,8 @@ bar {
 
 
 #startup apps
-exec --no-startup-id i3-msg 'workspace $ws6;exec /usr/bin/firefox'
-exec --no-startup-id i3-msg 'workspace $ws2;exec /usr/bin/steam'
+exec --no-startup-id i3-msg 'workspace $ws6;exec flatpak run io.github.zen_browser.zen'
+exec --no-startup-id i3-msg 'workspace $ws1;exec /usr/bin/steam'
 
 
 #lock application to workspace
