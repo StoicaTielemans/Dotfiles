@@ -79,10 +79,17 @@ exec --no-startup-id nm-applet
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 #bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 #bindsym button8 exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 0
 #bindsym --release button8 exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 1
+
+# use britghtnessctl for backlight control
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 5%+ && $refresh_i3status
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%- && $refresh_i3status
+
+
+bindsym $mod+F5 exec --no-startup-id ~/.config/i3/scripts/touchpad_toggle.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -95,10 +102,10 @@ tiling_drag modifier titlebar
 bindsym $mod+t exec kitty zsh
 
 # file manager nemo
-bindsym $mod+e exec thunar
+bindsym $mod+e exec nemo
 
 #firefox
-bindsym $mod+f exec firefox
+bindsym $mod+f exec flatpak run io.github.zen_browser.zen
 
 #discord
 #vesktop as alternative
@@ -232,7 +239,9 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+mod1+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#power menu
+bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -263,11 +272,13 @@ bindsym $mod+mod1+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 bar {
-    tray_output ePD-1
+    tray_output primary
     output eDP-1
     strip_workspace_numbers yes
     font pango:JetBrainsMono Nerd Font 13
     position top
+    tray_padding  2
+    #i3bar_command i3bar --transparency
     status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
     colors {
         separator #666666

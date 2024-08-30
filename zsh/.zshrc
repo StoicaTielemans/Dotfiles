@@ -55,6 +55,7 @@ alias ll='eza -al'
 alias tree='eza --tree'
 alias vnat='sudo virsh net-start default'
 alias r2modman='r2modman --no-sandbox'
+alias XRDP='sudo systemctl start xrdp.service'
 
 autoload -Uz compinit
 compinit
@@ -124,4 +125,5 @@ function yy() {
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/go/bin

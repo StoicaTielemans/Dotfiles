@@ -4,7 +4,7 @@ icons_format = "{icon}"
 theme = "ctp-mocha"
 
 [icons]
-icons = "awesome4"
+icons = "material-nf"
 
 [[block]]
 block = "focused_window"
@@ -91,7 +91,7 @@ good_fg = "#1e1e2e"
 [[block]]
 block = "sound"
 driver = "pulseaudio"
-max_vol = 70
+#max_vol = 70
 [[block.click]]
 button = "left"
 cmd = "pavucontrol"
@@ -157,7 +157,7 @@ cmd = "~/.config/i3/scripts/power-profiles"
 [[block]]
 block = "backlight"
 #device = "intel_backlight"
-invert_icons = true
+invert_icons = false
 #cycle = [100,90,80,70,60,50,40,30,20,10]
 cycle = [10,20,30,40,50,60,70,80,90, 100]
 missing_format = ""
