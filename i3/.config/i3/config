@@ -275,7 +275,7 @@ bar {
     tray_output DP-4
     output DP-2
     strip_workspace_numbers yes
-    font pango:JetBrainsMono Nerd Font, FontAwesome 13
+    font pango:JetBrainsMono Nerd Font, FontAwesome 9
     position top
     status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
     colors {
@@ -291,7 +291,7 @@ bar {
 bar {
     output DP-4
     strip_workspace_numbers yes
-    font pango:JetBrainsMono Nerd Font, FontAwesome 13
+    font pango:JetBrainsMono Nerd Font, FontAwesome 9
     position top
     status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
     colors {
