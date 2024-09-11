@@ -56,6 +56,7 @@ alias tree='eza --tree'
 alias vnat='sudo virsh net-start default'
 alias r2modman='r2modman --no-sandbox'
 alias XRDP='sudo systemctl start xrdp.service'
+alias t='trash'
 
 autoload -Uz compinit
 compinit
