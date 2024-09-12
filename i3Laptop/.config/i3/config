@@ -32,7 +32,7 @@ client.background       #ffffff
 
 
 #gaps
-gaps inner 10
+gaps inner 5
 smart_gaps on
 
 
@@ -105,7 +105,7 @@ bindsym $mod+t exec kitty zsh
 bindsym $mod+e exec nemo
 
 #firefox
-bindsym $mod+f exec flatpak run io.github.zen_browser.zen
+bindsym $mod+f exec firefox
 
 #discord
 #vesktop as alternative
@@ -275,7 +275,7 @@ bar {
     tray_output primary
     output eDP-1
     strip_workspace_numbers yes
-    font pango:JetBrainsMono Nerd Font 13
+    font pango:JetBrainsMono Nerd Font 10
     position top
     tray_padding  2
     #i3bar_command i3bar --transparency
