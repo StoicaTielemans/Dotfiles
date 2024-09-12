@@ -1,5 +1,6 @@
 return {
   -- https://github.com/MeanderingProgrammer/markdown.nvim
+  -- nice markdown view
   {
     'MeanderingProgrammer/markdown.nvim',
     name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim

@@ -1,6 +1,6 @@
 -- autopairs
 -- https://github.com/windwp/nvim-autopairs
-
+-- make pair for {}""()[]''
 return {
   'windwp/nvim-autopairs',
   event = 'InsertEnter',
