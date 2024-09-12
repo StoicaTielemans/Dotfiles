@@ -1,3 +1,4 @@
+-- indicators at beginning of line for changes to git
 -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
 --    require('gitsigns').setup({ ... })
 --

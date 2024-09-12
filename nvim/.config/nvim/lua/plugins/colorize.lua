@@ -1,4 +1,5 @@
 return {
+  -- give #fff color
   'norcalli/nvim-colorizer.lua',
   config = function()
     require('colorizer').setup {

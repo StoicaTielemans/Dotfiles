@@ -1,4 +1,5 @@
 return {
+  -- best file/dir editor for nvim
   {
     'stevearc/oil.nvim',
     opts = {

@@ -1,4 +1,5 @@
--- nvim v0.8.0
+-- tool for git
+
 return {
   'kdheepak/lazygit.nvim',
   cmd = {
