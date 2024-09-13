@@ -35,10 +35,9 @@ client.background       #ffffff
 gaps inner 10
 smart_gaps on
 
-# set in /etc/X11/xorg.conf file with nvidia settings
 # enable second monitor (use arandr now)
-#exec_always xrandr --output DP-2 --auto --primary 
-#exec_always xrandr --output DP-4 --auto --right-of DP-2 
+exec_always xrandr --output DP-2 --mode 1920x1080 --primary  --refresh 165.00
+exec_always xrandr --output DP-4 --mode 1920x1080 --right-of DP-2 --refresh 165.00
 
 #run easy effect (headset Eq)
 exec_always easyeffects --gapplication-service -l My
