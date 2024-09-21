@@ -84,7 +84,7 @@ source <(fzf --zsh)
 # add in zsh plugin
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#fff,bg=#555,bold,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#fff,bg=#11111b ,bold,underline"
 zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
 # set vv keybind to open with nvim
 ZVM_VI_EDITOR=/usr/bin/nvim
