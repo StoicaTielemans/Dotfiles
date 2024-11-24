@@ -57,8 +57,26 @@ alias vnat='sudo virsh net-start default'
 alias r2modman='r2modman --no-sandbox'
 alias XRDP='sudo systemctl start xrdp.service'
 alias t='trash'
+# alias sshfs_laptop='sshfs stick@192.168.0.249:/home/stick/Documents remote_desktop/'
 
-autoload -Uz compinit
+sshfs_laptop() {
+    if [ -z "$1" ]; then
+        echo "Please provide the last number of the IP address"
+        sshfs -o sshfs_debug -o LogLevel=DEBUG -oAddressFamily=inet stick@192.168.0.136:/home/stick/Documents remote_desktop/ 
+        return 1
+    fi
+    sshfs -o sshfs_debug -o LogLevel=DEBUG -oAddressFamily=inet stick@192.168.0.$1:/home/stick/Documents remote_desktop/
+}
+ssh_laptop() {
+    if [ -z "$1" ]; then
+        echo "Please provide the last number of the IP address"
+        ssh stick@192.168.0.249
+        return 1
+    fi
+    ssh stick@192.168.0.$1
+}
+fpath=(~/.zsh/completions $fpath)
+autoload -U compinit && compinit
 compinit
 # End of lines added by compinstall
 
