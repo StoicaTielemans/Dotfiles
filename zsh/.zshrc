@@ -57,10 +57,18 @@ alias vnat='sudo virsh net-start default'
 alias r2modman='r2modman --no-sandbox'
 alias XRDP='sudo systemctl start xrdp.service'
 alias t='trash'
+alias p-intellij='prime-run /home/stick/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea '
+alias p-php='prime-run /home/stick/.local/share/JetBrains/Toolbox/apps/phpstorm/bin/phpstorm '
+# laravel sail
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
-autoload -Uz compinit
+
+# Enable the completion system
+autoload -U compinit
 compinit
-# End of lines added by compinstall
+
+# Add custom completions directory to $fpath
+fpath=(~/.zsh/completions $fpath)
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -127,3 +135,5 @@ function yy() {
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 export PATH=$PATH:$HOME/go/bin
+export DENO_INSTALL="/home/stick/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
