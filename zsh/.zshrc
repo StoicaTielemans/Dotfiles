@@ -65,7 +65,6 @@ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
 # Enable the completion system
 autoload -U compinit
-=======
 # alias sshfs_laptop='sshfs stick@192.168.0.249:/home/stick/Documents remote_desktop/'
 
 sshfs_laptop() {
