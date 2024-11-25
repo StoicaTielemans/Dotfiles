@@ -65,10 +65,29 @@ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
 # Enable the completion system
 autoload -U compinit
+=======
+# alias sshfs_laptop='sshfs stick@192.168.0.249:/home/stick/Documents remote_desktop/'
+
+sshfs_laptop() {
+    if [ -z "$1" ]; then
+        echo "Please provide the last number of the IP address"
+        sshfs -o sshfs_debug -o LogLevel=DEBUG -oAddressFamily=inet stick@192.168.0.136:/home/stick/Documents remote_desktop/ 
+        return 1
+    fi
+    sshfs -o sshfs_debug -o LogLevel=DEBUG -oAddressFamily=inet stick@192.168.0.$1:/home/stick/Documents remote_desktop/
+}
+ssh_laptop() {
+    if [ -z "$1" ]; then
+        echo "Please provide the last number of the IP address"
+        ssh stick@192.168.0.249
+        return 1
+    fi
+    ssh stick@192.168.0.$1
+}
+fpath=(~/.zsh/completions $fpath)
+autoload -U compinit && compinit
 compinit
 
-# Add custom completions directory to $fpath
-fpath=(~/.zsh/completions $fpath)
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -92,7 +111,7 @@ source <(fzf --zsh)
 # add in zsh plugin
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#fff,bg=#555,bold,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#fff,bg=#11111b ,bold,underline"
 zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
 # set vv keybind to open with nvim
 ZVM_VI_EDITOR=/usr/bin/nvim
