@@ -59,6 +59,8 @@ alias XRDP='sudo systemctl start xrdp.service'
 alias t='trash'
 alias p-intellij='prime-run /home/stick/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea '
 alias p-php='prime-run /home/stick/.local/share/JetBrains/Toolbox/apps/phpstorm/bin/phpstorm '
+alias fa='fastanime anilist'
+alias lg='lazygit'
 # laravel sail
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
