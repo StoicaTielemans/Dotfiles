@@ -1,8 +1,8 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 16,
-  "spacing": 4,
+  "height": 11,
+  "spacing": 0,
   "exclusive": true,
   "gtk-layer-shell": true,
   "passthrough": false,
@@ -70,6 +70,7 @@
       "portable": "",
       "car": "",
       "default": [" ", " ", " "],
+      "ignored-sinks": ["Easy Effects Sink"]
     },
     "on-click": "pavucontrol",
 },
@@ -80,6 +81,7 @@
     "scroll-step": 1,
     "smooth-scrolling-threshold": 1,
     "max-volume": 100,
+    "ignored-sinks": ["Easy Effects Sink"],
     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
     "on-click-middle": "pavucontrol",
     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
