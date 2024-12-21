@@ -7,6 +7,8 @@ fi
 
 export PATH=/home/stick/.cargo/bin:$PATH
 
+
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=5000
