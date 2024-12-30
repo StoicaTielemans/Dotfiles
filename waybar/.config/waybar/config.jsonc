@@ -18,9 +18,7 @@
     "clock",
     "tray",
     "custom/power",
-  ],
-  "hyprland/workspaces": {
-  "format": "{icon}",
+  ], "hyprland/workspaces": { "format": "{icon}",
   "on-click": "activate",
   "format-icons": {
     "1": "一",
@@ -83,8 +81,8 @@
     "max-volume": 100,
     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
     "on-click-middle": "pavucontrol",
-    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
-    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
+    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
   },
     "ignored-sinks": ["Easy Effects Sink"],
 },
