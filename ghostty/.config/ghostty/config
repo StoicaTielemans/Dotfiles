@@ -1,0 +1,125 @@
+##########
+# COLORS #
+##########
+theme = catppuccin-mocha
+
+background-opacity = 0.85
+###############
+# CURSOR DEFS #
+###############
+
+cursor-style-blink = false
+cursor-opacity = 0.7
+
+adjust-cell-height = 8
+
+adjust-cursor-thickness = 2
+
+mouse-scroll-multiplier = 2
+############
+# startup #
+############
+command = fastfetch --load-config paleofetch.jsonc && exec zsh
+
+wait-after-command = true
+
+############
+# WIN-DEFS #
+############
+
+window-padding-x = 0
+window-padding-y = 0
+window-padding-color = background
+window-theme = ghostty
+window-decoration = false
+window-save-state = always
+quick-terminal-position = top
+
+# This is a bit annoying atm; would be nice if the mouse didn't interfere if you weren't using it - something like dwm.
+focus-follows-mouse = false
+shell-integration = zsh
+
+#############
+# FONT-DEFS #
+#############
+
+font-family =   JetBrainsMonoNL Nerd Font
+font-feature = -liga
+
+#font-family-bold
+#font-family-italic
+#font-family-bold-italic
+
+font-size = 13
+
+
+############
+# KEYBINDS #
+############
+
+# Trigger Sequences
+# sequence of triggers to activate an action (similar to tmux which uses ctrl+a as prefix for example).
+
+
+keybind = all:unconsumed:alt+r=reload_config
+
+keybind = ctrl+z=close_surface
+
+keybind = ctrl+x=ignore
+
+
+keybind = alt+v=paste_from_clipboard
+keybind = alt+c=copy_to_clipboard
+keybind = alt+p=paste_from_selection
+
+
+#keybind = ctrl+==increase_font_size
+#keybind = ctrl+-=decrease_font_size
+
+keybind = ctrl+a>shift+g=scroll_to_bottom
+
+keybind = ctrl+shift+u=scroll_page_up
+keybind = ctrl+shift+d=scroll_page_down
+#keybind = alt+=scroll_page_fractional
+#keybind = alt+=scroll_page_lines
+
+
+# Resize
+keybind = shift+ctrl+h=resize_split:left,10
+keybind = shift+ctrl+j=resize_split:down,10
+keybind = shift+ctrl+k=resize_split:up,10
+keybind = shift+ctrl+l=resize_split:right,10
+
+# Move between splits
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:bottom
+keybind = alt+k=goto_split:top
+keybind = alt+l=goto_split:right
+
+# switch windows by number
+keybind = ctrl+one=goto_tab:1
+keybind = ctrl+two=goto_tab:2
+keybind = ctrl+three=goto_tab:3
+keybind = ctrl+four=goto_tab:4
+keybind = ctrl+five=goto_tab:5
+keybind = ctrl+six=goto_tab:6
+keybind = ctrl+seven=goto_tab:7
+keybind = ctrl+eight=goto_tab:8
+keybind = ctrl+nine=goto_tab:9
+
+# tabs 
+keybind = alt+t=new_tab
+keybind = alt+n=previous_tab
+keybind = alt+m=next_tab
+keybind = alt+p=last_tab
+
+keybind = alt+q=close_window
+
+# split
+keybind = alt+:=new_split:right
+keybind = alt+"=new_split:down
+
+# keybind = alt+f=toggle_fullscreen
+
+# Other
+# ctrl+-/= used to decrease/increase font size (default)
