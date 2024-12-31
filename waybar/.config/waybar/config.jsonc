@@ -157,7 +157,7 @@
     "spacing": 8
   },
   "clock": {
-    "format": " {:%R}",
+    "format": " {:L%d/%m/%y| %H:%M}",
     "on-click": "eww open calendar --toggle --no-daemonize &",
     "tooltip-format": " {:%d %B %Y}",
   },
@@ -217,8 +217,8 @@
   },
     "ignored-sinks": ["Easy Effects Sink"],
   "memory": {
-    "format": "󰍛 {used}GB",
-    "tooltip-format": "󰍛 {used}/{total} GiB | {percentage}%",
+    "format": " {used}GB",
+    "tooltip-format": " {used}/{total} GiB | {percentage}%",
     "interval": 5
   },
   "cpu": {
