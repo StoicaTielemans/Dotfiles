@@ -65,6 +65,7 @@ alias fa='fastanime anilist'
 alias lg='lazygit'
 # laravel sail
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+alias ollama-llm="bash ~/Documents/ollama.sh"
 
 
 # Enable the completion system

@@ -28,27 +28,6 @@
     )
   )
   
-  (defwidget meters []
-    (box :class "meters" :orientation "h" :halign "end" :spacing 12 :space-evenly "false"
-      (metric :label "󰍛"
-              :value "󱃃 ${temp}C"
-              :onchange ""
-              :onclick "")
-      (metric :label "󰍛"
-              :value "󰍛  ${memoryusage}%"
-              :onchange ""
-              :onclick "")
-      (metric :label "󰻠"
-              :value "󰻠  ${cpusage}%"
-              :onchange ""
-              :onclick "")
-      (metric :label ""
-              :value {volume != "0" ? "󰕾  ${volume}%" : "󰝟 "}
-              :onchange "pamixer --set-volume {} &"
-              :onclick "bash ~/.config/scripts/volume mute &")
-    )
-  )
-  
   (defwidget connectivity []
     (box :class "connectivity"
       :spacing 10
@@ -92,20 +71,7 @@
     )
   )
   
-  (defwidget workspaces [array]
-    (box :class "workspaces"
-         :orientation "h"
-         :space-evenly false
-         :spacing 1
-         :halign "start"
-      (for entry in array
-        (button :onclick `swaymsg workspace "${entry.name}"`
-                :class {entry.focused ? "focused" : ""}
-                `${entry.name}`
-        )
-      )
-    )
-  )
+  
   
   (defwidget metric [label value onchange onclick]
     (box :orientation "h" 
@@ -151,7 +117,7 @@
       (box :spacing 10
         (button :class "test" :onclick "eww open actioncenter --toggle && hyprshot-gui &" "󰹑 ")
         (button :class "test" :onclick "thunar ~ & eww open actioncenter --toggle &" " ")
-        (button :class "test" :onclick "bash $HOME/.config/eww/scripts/sunset.sh" "")
+        (button :class { cafein != 'false' ? "testenabled" : "test"} :onclick {cafein != false ? "bash $HOME/.config/hypr/scripts/cafein toggle & eww update cafein='false'" : "$HOME/.config/hypr/scripts/cafein toggle & eww update cafein='true'"} " ")
       )
     )
   )
@@ -187,6 +153,7 @@
   )
   
   (include "./music_center.yuck")
+  (include "./barwidget.yuck")
   (include "./desktop.yuck")
   (include "./calendar.yuck")
   (include "./variables.yuck")
@@ -237,5 +204,5 @@
   (defwindow activate-linux
     :monitor 0
     :stacking "fg"
-    :geometry (geometry :x "8px" :y "32px" :width "250px" :anchor "bottom right")
+    :geometry (geometry :x "8px" :y "32px" :width "285px" :anchor "bottom right")
     (activate-linux))

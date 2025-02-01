@@ -3,11 +3,11 @@
   :exclusive "false"
   :windowtype "normal"
   :stacking "overlay"
-  :geometry (geometry :x "0"
+  :geometry (geometry :x "15"
                       :y "10"
-                      :width "450px"
+                      :width "425px"
                       :height "120px"
-                      :anchor "top center")
+                      :anchor "left top")
   :reserve (struts :side "right" :distance "4%")
   (box :orientation "h" :space-evenly "false"
     (box :class "musicart" :style {musicartlink != "" ? `background-image: url("${musicartlink}"); min-height:80px; min-width: 75px; margin-right: 10px;` :  `min-height:0px; min-width: 0px; border:unset;`})
@@ -23,10 +23,12 @@
               :value musicpositionpercentage)
         (box :class "label" {musiclength})
       )
-      (box :class "musicbuttons" :orientation "h" :halign "center" :spacing 30
+      (box :class "musicbuttons" :orientation "h" :halign "center" :spacing 10
+      (button :class { mscloop != "None" ? "musicbutton2" : "musicbutton2dis"} :onclick {mscloop == "None" ? "playerctl loop playlist&" : "playerctl loop none"} " ")
         (button :class "musicbutton" :onclick "playerctl previous &" "󰒮")
         (button :class "playbutton" :onclick "playerctl play-pause &" {playingorpaused != "Paused" ? "󰏤" : "󰐊" })
         (button :class "musicbutton" :onclick "playerctl next &" "󰒭")
+        (button :class {mscshuffle != "Off" ? "musicbutton2" : "musicbutton2dis"} :onclick {mscshuffle == "Off" ? "playerctl shuffle on&" : "playerctl shuffle off"} " ")
       )
     )
   )

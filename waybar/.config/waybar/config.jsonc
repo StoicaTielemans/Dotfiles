@@ -5,91 +5,59 @@
 //    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    
 //                 |___/                   
 //  
-// by Binary Harbinger
+//
 // ----------------------------------------------------- 
 //
+
 
 {
   "layer": "top",
   "position": "top",
   "mod": "dock",
   "exclusive": true,
-  "gtk-layer-shell": true,
+  "gtk-layer-shell": false,
   "margin-top": 0,
   "passthrough": false,
-  "height": 0, 
+  "height": 30, 
   "modules-left": [
-     "custom/os_button",  "mpris","hyprland/window",
-    "memory", "cpu"
+    "custom/os_button", "hyprland/workspaces", "hyprland/window", "memory", "cpu","custom/gpu-usage"
   ],
-  "modules-center": ["hyprland/workspaces"],
+  "modules-center": ["mpris",],
   "modules-right": [
-    "pulseaudio#input", "pulseaudio", "network", "battery", "backlight", "power-profiles-daemon",
-     "clock","tray"
+    "pulseaudio#input", "pulseaudio", "network", "battery", "backlight", "clock","custom/swaync", "tray"
   ],
-  "hyprland/language": {
-    "format": "{}",
-    "format-en": "ENG",
-    "format-tr": "TR"
-  },
-  "custom/search": {
-          "format": "",
-          "on-click": "~/.config/hypr/scripts/rofilaunch.sh --drun",
-          "tooltip": false,
-      },
-  "custom/runner": {
-    "format": "",
-    "on-click": "~/.config/hypr/scripts/rofilaunch.sh --system_menu",
-    "tooltip": false
-  },
-  "mpris": {
-    "on-click-right": "eww open musiccenter --toggle --no-daemonize &",
-    "format": "{player_icon} ({dynamic})",
-    "format-paused": " {status_icon} <i>{dynamic}</i>",
-    "dynamic-len": 30,
-    "player-icons": {
-      "default": "▶ ",
-      "mpv": " ",
-      "spotify" : "  ",
-      "firefox": " ",
-    },
-    "status-icons": {
-      "paused": "󰏤 "
-    },
-    "tooltip": false
-  },
-  "bluetooth": {
-    "format": "",
-    "format-connected": " {device_alias}",
-    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
-    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click": "blueman-manager"
-  },
-  "power-profiles-daemon": {
+
+  "hyprland/workspaces": {
     "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
+    "icon-size": 32,
+    "spacing": 16,
+    "on-scroll-up": "hyprctl dispatch workspace r+1",
+    "on-scroll-down": "hyprctl dispatch workspace r-1",
     "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
-    }
+      "1": "一",
+      "2": "二",
+      "3": "三", 	
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十"
+    },
+    "sort-by-number": true
   },
-  "backlight": {
-    "on-click": "eww open actioncenter --toggle --no-daemonize &",
-    "device": "intel_backlight",
-    "format": "{icon} {percent}%",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
+
+  "custom/os_button": {
+    "format": " ",
+    "on-click": "wlogout",
+    "tooltip": false
   },
   "custom/swaync": {
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span foreground='#7b82c6'><sup></sup></span>",
+      "notification": "<span foreground='red'><sup></sup></span>",
       "none": "",
       "dnd-notification": "<span foreground='red'><sup></sup></span>",
       "dnd-none": "",
@@ -105,73 +73,43 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
-  "hyprland/window": {
-    "format": "{title}",
-    "max-len": 10,
-    "rewrite": {
-        "(.*) — Mozilla Firefox": "󰈹 $1",
+  "mpris": {
+    "on-click-right": "eww open musiccenter --toggle --no-daemonize &",
+    "format": "{player_icon} ({dynamic})",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "dynamic-len": 30,
+    "player-icons": {
+      "default": "▶ ",
+      "mpv": " ",
+      "spotify": " ",
+      "firefox": " "
     },
-    "separate-outputs": true
+    "status-icons": {
+      "paused": "󰏤 "
+    },
+    "tooltip": false
+  },
+
+  "memory": {
+    "format": " {used}GB",
+    "tooltip-format": " {used}/{total} GiB | {percentage}%",
+    "interval": 5
+  },
+
+  "cpu": {
+    "format": "󰻠 {usage}%",
+    "format-alt": "󰻠 {avg_frequency} GHz",
+    "interval": 5
+  },
+
+  // https://github.com/polponline/gpu-usage-waybar
+"custom/gpu-usage": {
+  "format": "󰠂 {}",
+  "exec": "/home/stick/.cargo/bin/gpu-usage-waybar",
+  "return-type": "json",
+  "format-icons": "󰾲",
+  "on-click": "kitty nvtop",
 },
-  "hyprland/workspaces": {
-    "format":"{icon}",
-    "icon-size": 32,
-    "spacing": 16,
-    "on-scroll-up": "hyprctl dispatch workspace r+1",
-    "on-scroll-down": "hyprctl dispatch workspace r-1",
-  "format-icons": {
-    "1": "一",
-    "2": "二",
-    "3": "三", 	
-    "4": "四",
-    "5": "五",
-    "6": "六",
-    "7": "七",
-    "8": "八",
-    "9": "九",
-    "10": "十",
-  },
-  "sort-by-number": true
-  },
-  "custom/os_button": {
-    "format": "",
-    "on-click": "wlogout",
-    "tooltip": false
-  },
-  "custom/cafein": {
-    "format": "",
-    "on-click": "~/.config/hypr/scripts/cafein toggle",
-    "tooltip": false
-  },
-  "wlr/taskbar": {
-    "format": "{icon} {title:.18}",
-    "icon-size": 18,
-    "spacing": 3,
-    "on-click-middle": "close",
-    "tooltip-format": "{title}",
-    "ignore-list": [],
-    "on-click": "activate"
-  },
-  "tray": {
-    "icon-size": 18,
-    "spacing": 8
-  },
-  "clock": {
-    "format": " {:L%d/%m/%y| %H:%M}",
-    "on-click": "eww open calendar --toggle --no-daemonize &",
-    "tooltip-format": " {:%d %B %Y}",
-  },
-  "network": {
-    "format-wifi": "{icon}",
-    "format-ethernet": "󰈀 {bandwidthDownBits}",
-    "format-disconnected": "󰌙",
-    "tooltip-format": "{icon} {essid}",
-    "format-icons": [
-      "󰤯", "󰤟", "󰤢", "󰤢", "󰤨"
-    ],
-    "on-click": "eww open actioncenter --toggle --no-daemonize &",
-    "on-click-right": "kitty -e 'nmtui'"
-  },
   "battery": {
     "on-click": "eww open actioncenter --toggle --no-daemonize &",
     "states": {
@@ -188,13 +126,26 @@
     ],
     "format-icons": ["", "", "", "", ""]
   },
+
+  "network": {
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀 {bandwidthDownBits}",
+    "format-disconnected": "󰌙",
+    "tooltip-format": "{icon} {essid}",
+    "format-icons": [
+      "󰤯", "󰤟", "󰤢", "󰤢", "󰤨"
+    ],
+    "on-click": "eww open actioncenter --toggle --no-daemonize &",
+    "on-click-right": "kitty -e 'nmtui'"
+  },
+
   "pulseaudio": {
     "max-volume": 150,
     "scroll-step": 5,
     "format": "{icon} {volume}%",
     "tooltip-format": "{icon}  {volume}%",
     "format-icons": {
-    "headphone": "",
+      "headphone": "",
       "format-muted": "",
       "default": [
         "", "", ""
@@ -202,8 +153,9 @@
     },
     "on-click": "eww open actioncenter --toggle --no-daemonize &",
     "on-click-right": "pavucontrol",
-    "ignored-sinks": ["Easy Effects Sink"],
+    "ignored-sinks": ["Easy Effects Sink"]
   },
+
   "pulseaudio#input": {
     "format-source": "{volume}%",
     "format-source-muted": " off",
@@ -213,17 +165,17 @@
     "max-volume": 100,
     "on-click-middle": "pavucontrol",
     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
-    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%"
   },
-    "ignored-sinks": ["Easy Effects Sink"],
-  "memory": {
-    "format": " {used}GB",
-    "tooltip-format": " {used}/{total} GiB | {percentage}%",
-    "interval": 5
+
+  "clock": {
+    "format": " {:L%d/%m/%y| %H:%M}",
+    "on-click": "eww open calendar --toggle --no-daemonize &",
+    "tooltip-format": " {:%d %B %Y}"
   },
-  "cpu": {
-    "format": "󰻠 {usage}%",
-    "format-alt": "󰻠 {avg_frequency} GHz",
-    "interval": 5
-  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 8
+  }
 }
