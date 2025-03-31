@@ -16,6 +16,8 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "ewditor.formatOnPaste": true
+  "ewditor.formatOnPaste": true,
+  "workbench.startupEditor": "none",
+  "markdown-preview-enhanced.previewTheme": "monokai.css"
   // config above
 }
