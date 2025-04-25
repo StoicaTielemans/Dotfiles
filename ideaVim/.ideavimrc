@@ -53,15 +53,14 @@ set incsearch
 set hlsearch
 
 " active surround
-set surround
+"set surround
 " active highlightedyank
 set highlightedyank
 " active nerdtree
-set nerdtree
 
-
-set surround
+Plug 'preservim/nerdtree'
 set nerdtree
+set NERDTree
 
 " Easymotion settings
 " set easymotion
@@ -70,16 +69,31 @@ set nerdtree
 "" Key mappings
 "" ========================================================
 
+"easy exit
 inoremap jj <Esc>
 
 " flash
 map s <Action>(flash.search)
 
+" Open NERDTree (use q to exit) file tree
+map <leader>- :NERDTreeToggle<CR>
+
+"map <leader><leader> <Action>(SearchEverywhere)
+
+" Actions
+" inline chatgpt
+map <leader>aa <action>(ShowIntentionActions)
+map <leader>ff <action>(SearchEverywhere)
+
+" move around buffers
+nnoremap <A-h> :bprevious<CR>
+nnoremap <A-l> :bnext<CR>
+
 " Pane navigation
-nnoremap <A-h> <C-w>h
-nnoremap <A-l> <C-w>l
-nnoremap <A-k> <C-w>k
-nnoremap <A-j> <C-w>j
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-k> <C-w>k
+nnoremap <C-j> <C-w>j
 
 " Jump between methods
 nnoremap [[ <Action>(MethodUp)
@@ -94,12 +108,9 @@ vnoremap > >gv
 inoremap <C-j> <Action>(PopupMenu-selectNext)
 inoremap <C-k> <Action>(PopupMenu-selectPrev)
 
-
 "" Leader commands
 "" ========================================================
 
-" Open NERDTree (use q to exit)
-map <leader>- :NERDTreeToggle<CR>
 
 " Window splits
 map <leader>wv <Action>(SplitVertically)
@@ -112,9 +123,6 @@ map <leader>dd <action>(ToggleDistractionFreeMode)
 map <leader>dz <action>(ToggleZenMode)
 map <leader>df <action>(ToggleFullScreen)
 
-" Actions
-map <leader>am <action>(ShowIntentionActions)
-map <leader>as <action>(SearchEverywhere)
 
 " File navigation
 map <leader>ff <action>(GotoFile)
