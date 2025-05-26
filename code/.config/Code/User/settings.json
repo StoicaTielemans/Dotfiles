@@ -18,6 +18,7 @@
   "editor.formatOnSave": true,
   "ewditor.formatOnPaste": true,
   "workbench.startupEditor": "none",
-  "markdown-preview-enhanced.previewTheme": "monokai.css"
+  "markdown-preview-enhanced.previewTheme": "monokai.css",
+  "vim.useSystemClipboard": true
   // config above
 }
