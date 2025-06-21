@@ -8,8 +8,6 @@
 //
 // ----------------------------------------------------- 
 //
-
-
 {
   "layer": "top",
   "position": "top",
@@ -18,15 +16,28 @@
   "gtk-layer-shell": false,
   "margin-top": 0,
   "passthrough": false,
-  "height": 30, 
+  "height": 30,
   "modules-left": [
-    "custom/os_button", "hyprland/workspaces", "hyprland/window", "memory", "cpu","custom/gpu-usage"
+    "custom/os_button",
+    "hyprland/workspaces",
+    "hyprland/window",
+    "memory",
+    "cpu",
+    "custom/gpu-usage"
   ],
-  "modules-center": ["mpris",],
+  "modules-center": [
+    "mpris"
+  ],
   "modules-right": [
-    "pulseaudio#input", "pulseaudio", "network", "battery", "backlight", "clock","custom/swaync", "tray"
+    "pulseaudio#input",
+    "pulseaudio",
+    "network",
+    "battery",
+    "backlight",
+    "clock",
+    "custom/swaync",
+    "tray"
   ],
-
   "hyprland/workspaces": {
     "format": "{icon}",
     "icon-size": 32,
@@ -36,7 +47,7 @@
     "format-icons": {
       "1": "一",
       "2": "二",
-      "3": "三", 	
+      "3": "三",
       "4": "四",
       "5": "五",
       "6": "六",
@@ -47,10 +58,9 @@
     },
     "sort-by-number": true
   },
-
   "custom/os_button": {
     "format": " ",
-    "on-click": "wlogout",
+    "on-click-right": "wlogout",
     "tooltip": false
   },
   "custom/swaync": {
@@ -89,29 +99,26 @@
     },
     "tooltip": false
   },
-
   "memory": {
     "format": " {used}GB",
     "tooltip-format": " {used}/{total} GiB | {percentage}%",
     "interval": 5
   },
-
   "cpu": {
     "format": "󰻠 {usage}%",
     "format-alt": "󰻠 {avg_frequency} GHz",
     "interval": 5
   },
-
   // https://github.com/polponline/gpu-usage-waybar
-"custom/gpu-usage": {
-  "format": "󰠂 {}",
-  "exec": "/home/stick/.cargo/bin/gpu-usage-waybar",
-  "return-type": "json",
-  "format-icons": "󰾲",
-  "on-click": "kitty nvtop",
-},
+  "custom/gpu-usage": {
+    "format": "󰠂 {}",
+    "exec": "/home/stick/.cargo/bin/gpu-usage-waybar",
+    "return-type": "json",
+    "format-icons": "󰾲",
+    "on-click-right": "kitty nvtop",
+  },
   "battery": {
-    "on-click": "eww open actioncenter --toggle --no-daemonize &",
+    // "on-click": "eww open actioncenter --toggle --no-daemonize &",
     "states": {
       "good": 95,
       "warning": 30,
@@ -122,23 +129,41 @@
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
     "format-alt-icons": [
-      "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
     ],
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
-
   "network": {
     "format-wifi": "{icon}",
     "format-ethernet": "󰈀 {bandwidthDownBits}",
     "format-disconnected": "󰌙",
     "tooltip-format": "{icon} {essid}",
     "format-icons": [
-      "󰤯", "󰤟", "󰤢", "󰤢", "󰤨"
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤢",
+      "󰤨"
     ],
-    "on-click": "eww open actioncenter --toggle --no-daemonize &",
+    // "on-click": "eww open actioncenter --toggle --no-daemonize &",
     "on-click-right": "kitty -e 'nmtui'"
   },
-
   "pulseaudio": {
     "max-volume": 150,
     "scroll-step": 5,
@@ -148,14 +173,17 @@
       "headphone": "",
       "format-muted": "",
       "default": [
-        "", "", ""
+        "",
+        "",
+        ""
       ]
     },
-    "on-click": "eww open actioncenter --toggle --no-daemonize &",
+    // "on-click": "eww open actioncenter --toggle --no-daemonize &",
     "on-click-right": "pavucontrol",
-    "ignored-sinks": ["Easy Effects Sink"]
+    "ignored-sinks": [
+      "Easy Effects Sink"
+    ]
   },
-
   "pulseaudio#input": {
     "format-source": "{volume}%",
     "format-source-muted": " off",
@@ -167,32 +195,31 @@
     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%"
   },
-
-    "clock": {
-        "format": " {:L%d/%m/%y| %H:%M}",
-        "format-alt": "{:%A, %B %d, %Y (%R)}  ",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-                    "mode"          : "year",
-                    "mode-mon-col"  : 3,
-                    "weeks-pos"     : "right",
-                    "on-scroll"     : 1,
-                    "format": {
-                              "months":     "<span color='#ffead3'><b>{}</b></span>",
-                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-                              }
-                    },
-        "actions":  {
-                    "on-click-right": "mode",
-                    "on-scroll-up": "tz_up",
-                    "on-scroll-down": "tz_down",
-                    "on-scroll-up": "shift_up",
-                    "on-scroll-down": "shift_down"
-                    },
+  "clock": {
+    "format": " {:L%d/%m/%y| %H:%M}",
+    "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
     },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "tz_up",
+      "on-scroll-down": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    },
+  },
   "tray": {
     "icon-size": 18,
     "spacing": 8

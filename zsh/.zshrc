@@ -51,6 +51,25 @@ zstyle :compinstall filename '/home/stick/.zshrc'
 export EDITOR="nvim"
 export VISUAL="nvim" 
 alias ls='eza'
+
+remove-pkg() {
+  local pkg
+  pkg=$(expac -H M "%n\t%m" $(pacman -Qe) | \
+    fzf --with-nth=1 \
+        --preview 'pacman -Qi $(echo {} | cut -f1)' \
+        --preview-window=wrap | cut -f1)
+
+  if [[ -n "$pkg" ]]; then
+    read -q "confirm?Really remove $pkg? [y/N]: "
+    echo
+    if [[ "$confirm" =~ ^[yY]$ ]]; then
+      sudo pacman -Rns "$pkg"
+    else
+      echo "Aborted."
+    fi
+  fi
+}
+
 alias powermenu='~/.config/i3/scripts/powermenu'
 alias powerprofile='~/.config/i3/scripts/power-profiles'
 alias ll='eza -al'

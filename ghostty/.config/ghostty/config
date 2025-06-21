@@ -19,7 +19,8 @@ mouse-scroll-multiplier = 2
 ############
 # startup #
 ############
-command = fastfetch --load-config paleofetch.jsonc && exec zsh
+# command = fastfetch --load-config paleofetch.jsonc && exec zsh
+command = tmux
 
 wait-after-command = true
 
@@ -120,6 +121,3 @@ keybind = alt+:=new_split:right
 keybind = alt+"=new_split:down
 
 # keybind = alt+f=toggle_fullscreen
-
-# Other
-# ctrl+-/= used to decrease/increase font size (default)

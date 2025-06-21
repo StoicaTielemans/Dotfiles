@@ -1,21 +1,51 @@
 #!/usr/bin/env bash
 
-# Dependencies: grim, slurp, tesseract, wl-copy, notify-send (optional)
+# Description:
+# Select a region on screen and convert the image to text using OCR (tesseract).
+# Requirements: grim, slurp, tesseract, wl-clipboard (optional)
 
-IMG="/tmp/ocr_screenshot.png"
-TXT="/tmp/ocr_result.txt"
+# Check if required tools are installed
+for cmd in grim slurp tesseract; do
+  if ! command -v "$cmd" >/dev/null 2>&1; then
+    echo "Error: '$cmd' is not installed or not in PATH."
+    exit 1
+  fi
+done
 
-# Take a screenshot of selected area
-grim -g "$(slurp)" "$IMG" || exit 1
+# Optional clipboard support
+HAS_CLIPBOARD=no
+if command -v wl-copy >/dev/null 2>&1; then
+  HAS_CLIPBOARD=yes
+fi
 
-# Run OCR
-tesseract "$IMG" "$TXT" &>/dev/null || {
-  notify-send "OCR Error" "Failed to extract text"
-  exit 2
-}
+# Take area selection
+echo "Select area to extract text..."
+GEOM=$(slurp)
+if [ -z "$GEOM" ]; then
+  echo "Selection cancelled."
+  exit 1
+fi
 
-# Copy text to clipboard
-cat "$TXT.txt" | wl-copy
+# Temporary image path
+TEMP_IMG=$(mktemp /tmp/img2text_XXXXXX.png)
 
-# Optional: notify
-notify-send "OCR Complete" "Text copied to clipboard"
+# Take screenshot
+grim -g "$GEOM" "$TEMP_IMG"
+
+# Extract text with tesseract
+echo "Extracting text..."
+TEXT=$(tesseract "$TEMP_IMG" stdout)
+
+# Show result
+echo "------- OCR Result -------"
+echo "$TEXT"
+echo "--------------------------"
+
+# Copy to clipboard if possible
+if [ "$HAS_CLIPBOARD" = "yes" ]; then
+  echo "$TEXT" | wl-copy
+  echo "Text copied to clipboard."
+fi
+
+# Cleanup
+rm -f "$TEMP_IMG"
