@@ -20,9 +20,10 @@ mouse-scroll-multiplier = 2
 # startup #
 ############
 # command = fastfetch --load-config paleofetch.jsonc && exec zsh
-command = tmux
+# in zsh config
+# command = tmux
 
-wait-after-command = true
+# wait-after-command = true
 
 ############
 # WIN-DEFS #

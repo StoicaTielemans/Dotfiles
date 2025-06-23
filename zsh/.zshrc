@@ -179,6 +179,16 @@ function yy() {
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+
+# auto start tmux
+if [ -z "$TMUX" ] && [ -n "$PS1" ]; then
+  if command -v tmux >/dev/null 2>&1; then
+    tmux attach-session -t default || tmux new-session -s default
+  else
+    echo "tmux not found. Starting normal shell..."
+  fi
+fi
+
 export PATH=$PATH:$HOME/go/bin
 export DENO_INSTALL="/home/stick/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
