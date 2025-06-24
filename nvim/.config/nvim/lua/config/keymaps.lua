@@ -20,6 +20,10 @@ vim.api.nvim_set_keymap("n", "-", "<CMD>Oil --float<CR>", { noremap = true, desc
 -- map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
 -- map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 -- map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
+vim.keymap.set("n", "<C-h>", "<Cmd>TmuxNavigateLeft<CR>", {})
+vim.keymap.set("n", "<C-j>", "<Cmd>TmuxNavigateDown<CR>", {})
+vim.keymap.set("n", "<C-k>", "<Cmd>TmuxNavigateUp<CR>", {})
+vim.keymap.set("n", "<C-l>", "<Cmd>TmuxNavigateRight<CR>", {})
 --
 -- -- Resize window using <ctrl> arrow keys
 -- map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
