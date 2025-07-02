@@ -99,7 +99,7 @@ autoload -U compinit
 sshfs_laptop() {
     if [ -z "$1" ]; then
         echo "Please provide the last number of the IP address"
-        sshfs -o sshfs_debug -o LogLevel=DEBUG -oAddressFamily=inet stick@192.168.0.136:/home/stick/Documents remote_desktop/ 
+        sshfs -o sshfs_debug -o LogLevel=DEBUG -oAddressFamily=inet stick@192.168.0.136:/mnt/windows ~/remote_desktop/ 
         return 1
     fi
     sshfs -o sshfs_debug -o LogLevel=DEBUG -oAddressFamily=inet stick@192.168.0.$1:/home/stick/Documents remote_desktop/
