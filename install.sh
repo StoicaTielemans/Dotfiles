@@ -79,6 +79,13 @@ else
   echo "✅ yay is already installed"
 fi
 
+# Clone dotfiles
+if [[ ! -d "$DOTFILES_DIR" ]]; then
+  git clone "$DOTFILES_REPO" "$DOTFILES_DIR"
+else
+  echo "✅ Dotfiles already cloned"
+fi
+
 # install packages
 yay -S --needed --noconfirm "${packages[@]}"
 
@@ -100,10 +107,3 @@ stow -v tmux
 stow -v waybar
 stow -v wezterm
 stow -v zsh
-
-# Clone dotfiles
-if [[ ! -d "$DOTFILES_DIR" ]]; then
-  git clone "$DOTFILES_REPO" "$DOTFILES_DIR"
-else
-  echo "✅ Dotfiles already cloned"
-fi
