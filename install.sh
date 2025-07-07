@@ -98,9 +98,6 @@ else
 fi
 sudo ln -sf $(which nvim) /bin/vi
 
-#install cht.sh
-curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh && sudo chmod +x /usr/local/bin/cht.sh
-
 stow -v kitty
 stow -v nvim
 stow -v rofi
