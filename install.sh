@@ -25,6 +25,7 @@ packages=(
   btop
   curl
   stow
+  ttf-jetbrains-mono-nerd
   openssh
   # editor
   zed
@@ -109,3 +110,10 @@ stow -v wezterm
 stow -v zsh
 rm -rf ~/.config/hypr/
 stow -v hypr
+
+flatpak install flathub com.discordapp.Discord
+flatpak install flathub io.github.flattool.Warehouse
+flatpak install flathub com.github.IsmaelMartinez.teams_for_linux
+flatpak install flathub org.onlyoffice.desktopeditors
+flatpak install flathub com.usebottles.bottles
+flatpak install flathub org.deluge_torrent.deluge
