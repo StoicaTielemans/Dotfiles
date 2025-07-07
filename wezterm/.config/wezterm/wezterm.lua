@@ -12,18 +12,18 @@ config.prefer_egl = true
 -- config.copy_mode_copy_to_clipboard = true
 -- config.paste_from_clipboard = true
 
-config.keys = {
-	{
-		key = "c",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.CopyTo("ClipboardAndPrimarySelection"),
-	},
-	{
-		key = "v",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.PasteFrom("Clipboard"),
-	},
-}
+-- config.keys = {
+-- 	{
+-- 		key = "c",
+-- 		mods = "CTRL|SHIFT",
+-- 		action = wezterm.action.CopyTo("ClipboardAndPrimarySelection"),
+-- 	},
+-- 	{
+-- 		key = "v",
+-- 		mods = "CTRL|SHIFT",
+-- 		action = wezterm.action.PasteFrom("Clipboard"),
+-- 	},
+-- }
 
 -- === Mouse bindings for clipboard ===
 config.mouse_bindings = {

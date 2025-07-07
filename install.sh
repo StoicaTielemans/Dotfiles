@@ -42,6 +42,7 @@ packages=(
   rate-mirrors
   python
   lua
+  lazygit
   pinta
   krita
   spotify-adblock-git
@@ -61,7 +62,6 @@ packages=(
   waybar
   swaync
   wlogout
-
 )
 
 # CONFIG
@@ -100,7 +100,6 @@ sudo ln -sf $(which nvim) /bin/vi
 #install cht.sh
 curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh && sudo chmod +x /usr/local/bin/cht.sh
 
-stow -v hypr
 stow -v kitty
 stow -v nvim
 stow -v rofi
@@ -108,3 +107,5 @@ stow -v tmux
 stow -v waybar
 stow -v wezterm
 stow -v zsh
+rm -rf ~/.config/hypr/
+stow -v hypr
