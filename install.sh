@@ -24,6 +24,7 @@ packages=(
   # task manager
   btop
   curl
+  stow
   openssh
   # editor
   zed
@@ -89,7 +90,7 @@ fi
 # install packages
 yay -S --needed --noconfirm "${packages[@]}"
 
-if ! command -v vi &>/dev/null; then
+if command -v vi &>/dev/null; then
   yay -R --noconfirm vi
 else
   echo "✅ vi is already removed"
