@@ -4,8 +4,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- === Wayland settings ===
-config.enable_wayland = true
-config.prefer_egl = true
+config.enable_wayland = false
 
 -- === Clipboard settings ===
 -- Remove these invalid options:

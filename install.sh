@@ -38,6 +38,7 @@ packages=(
   curl
   stow
   ttf-jetbrains-mono-nerd
+  ttf-jetbrains-mono
   openssh
   # editor
   zed
