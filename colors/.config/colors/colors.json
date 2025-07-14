@@ -1,0 +1,28 @@
+{
+  "catppuccin": {
+    "background": "#1e1e2e",
+    "foreground": "#cdd6f4",
+    "select": "#585b70",
+    "pink": "#f5c2e7",
+    "purple": "#cba6f7",
+    "red": "#f38ba8",
+    "orange": "#fab387",
+    "yellow": "#f9e2af",
+    "green": "#a6e3a1",
+    "blue": "#89b4fa",
+    "gray": "#45475a"
+  },
+  "gruvbox": {
+    "background": "#282828",
+    "foreground": "#ebdbb2",
+    "select": "#3c3836",
+    "pink": "#d3869b",
+    "purple": "#b16286",
+    "red": "#cc241d",
+    "orange": "#fe8019",
+    "yellow": "#fabd2f",
+    "green": "#98971a",
+    "blue": "#458588",
+    "gray": "#928374"
+  }
+}

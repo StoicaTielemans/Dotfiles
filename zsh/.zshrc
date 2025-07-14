@@ -195,8 +195,8 @@ export PATH=$PATH:$HOME/go/bin
 export DENO_INSTALL="/home/stick/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 # cuda nvidia
-export PATH=/opt/cuda/bin:$PATH
-export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
+# export PATH=/opt/cuda/bin:$PATH
+# export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
 # Vckpg
 export VCPKG_ROOT=~/vcpkg
 # gtk theme settings

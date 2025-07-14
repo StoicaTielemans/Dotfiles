@@ -4,44 +4,12 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- === Wayland settings ===
-config.enable_wayland = false
+config.enable_wayland = true
 
 -- === Clipboard settings ===
--- Remove these invalid options:
+-- be sure application you copy from are set to wayland
 -- config.copy_mode_copy_to_clipboard = true
 -- config.paste_from_clipboard = true
-
--- config.keys = {
--- 	{
--- 		key = "c",
--- 		mods = "CTRL|SHIFT",
--- 		action = wezterm.action.CopyTo("ClipboardAndPrimarySelection"),
--- 	},
--- 	{
--- 		key = "v",
--- 		mods = "CTRL|SHIFT",
--- 		action = wezterm.action.PasteFrom("Clipboard"),
--- 	},
--- }
-
--- === Mouse bindings for clipboard ===
-config.mouse_bindings = {
-	{
-		event = { Up = { streak = 1, button = "Left" } },
-		mods = "NONE",
-		action = wezterm.action.CopyTo("ClipboardAndPrimarySelection"),
-	},
-	{
-		event = { Up = { streak = 2, button = "Left" } },
-		mods = "NONE",
-		action = wezterm.action.CopyTo("ClipboardAndPrimarySelection"),
-	},
-	{
-		event = { Up = { streak = 3, button = "Left" } },
-		mods = "NONE",
-		action = wezterm.action.CopyTo("ClipboardAndPrimarySelection"),
-	},
-}
 
 -- === Font ===
 config.font_size = 12.5
@@ -63,6 +31,7 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
+
 config.window_background_opacity = 0.9
 config.window_decorations = "NONE"
 config.use_fancy_tab_bar = false
