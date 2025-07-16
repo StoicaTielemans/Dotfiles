@@ -1,6 +1,8 @@
 {
   "catppuccin": {
     "background": "#1e1e2e",
+    "background1": "#181825",
+    "background2": "#11111b",
     "foreground": "#cdd6f4",
     "select": "#585b70",
     "pink": "#f5c2e7",

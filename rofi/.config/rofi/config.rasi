@@ -3,17 +3,15 @@
  * Maintainer: joekamprad [joekamprad //a_t// endeavouros.com]
  *******************************************************/
 configuration{
-    modi: ["drun", "window", "run"];
+    modi: ["drun"];
     icon-theme: "Papirus-Dark";
     show-icons: true;
-    terminal: "kitty";
+    terminal: "wezterm";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;
     sidebar-mode: false;
     display-drun: "> ";
-    display-run: " ";
-    display-window: " ";
     
     //adding vim keybindings
     kb-row-up: "Up,Control+k";

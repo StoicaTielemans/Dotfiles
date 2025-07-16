@@ -16,17 +16,17 @@
   "gtk-layer-shell": false,
   "margin-top": 0,
   "passthrough": false,
-  "height": 30,
+  "height": 20,
   "modules-left": [
     "custom/os_button",
     "hyprland/workspaces",
-    "hyprland/window",
     "memory",
     "cpu",
     "custom/gpu-usage"
   ],
   "modules-center": [
-    "mpris"
+    // "mpris",
+    "hyprland/window"
   ],
   "modules-right": [
     "pulseaudio#input",
@@ -59,7 +59,7 @@
     "sort-by-number": true
   },
   "custom/os_button": {
-    "format": " ",
+    "format": " 󰣇 ",
     "on-click-right": "wlogout",
     "tooltip": false
   },
@@ -115,7 +115,7 @@
     "exec": "/home/stick/.cargo/bin/gpu-usage-waybar",
     "return-type": "json",
     "format-icons": "󰾲",
-    "on-click-right": "kitty nvtop",
+    "on-click-right": "kitty nvtop"
   },
   "battery": {
     // "on-click": "eww open actioncenter --toggle --no-daemonize &",
@@ -218,7 +218,7 @@
       "on-scroll-down": "tz_down",
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
-    },
+    }
   },
   "tray": {
     "icon-size": 18,
