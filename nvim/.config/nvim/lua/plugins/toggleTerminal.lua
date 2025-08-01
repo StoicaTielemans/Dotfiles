@@ -4,9 +4,9 @@ return {
   event = "VeryLazy",
   config = function()
     require("toggleterm").setup({
-      size = 15,
+      size = 5,
       open_mapping = [[<leader>t]],
-      direction = "horizontal",
+      direction = "float",
       shade_terminals = true,
       start_in_insert = true,
       persist_size = true,
@@ -14,7 +14,11 @@ return {
       shell = vim.o.shell,
     })
 
-    vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm<CR>", { desc = "Toggle Terminal" })
+    vim.keymap.set("n", "<leader>t", function()
+      vim.cmd("ToggleTerm")
+    end, { desc = "Toggle Terminal", noremap = true, silent = true })
+
+    vim.keymap.set("t", "<C-f>", "<Nop>", { noremap = true, silent = true })
     vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode", noremap = true })
   end,
 }

@@ -25,7 +25,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 if [[ -z "$NVIM" ]]; then
   bindkey -v
 fi
-bindkey '^p' history-search-backword
+bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 # Editor
@@ -50,6 +50,7 @@ alias powermenu='~/.config/i3/scripts/powermenu'
 alias powerprofile='~/.config/i3/scripts/power-profiles'
 alias p-intellij='prime-run /home/stick/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea'
 alias p-php='prime-run /home/stick/.local/share/JetBrains/Toolbox/apps/phpstorm/bin/phpstorm'
+alias vih='vi ~/.config/hypr/hyprland.conf'
 alias fa='fastanime anilist'
 alias ollama-llm="bash ~/Documents/ollama.sh"
 
