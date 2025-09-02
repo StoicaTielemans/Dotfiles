@@ -9,6 +9,7 @@ export PATH=$PATH:$HOME/go/bin
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export VCPKG_ROOT=~/vcpkg
+#XDG_MENU_PREFIX=arch- kbuildsycoca6
 
 # History options
 HISTFILE=~/.histfile
@@ -36,8 +37,10 @@ export VISUAL="nvim"
 alias ls='eza'
 alias ll='eza -al'
 alias tree='eza --tree'
-alias df='dysk'
+alias df='duf' # old dysk
 alias t='trash'
+
+alias scanIp='sudo arp-scan --localnet '
 alias tm='tmux'
 alias cheat='cht.sh'
 alias lg='lazygit'
@@ -51,6 +54,7 @@ alias powerprofile='~/.config/i3/scripts/power-profiles'
 alias p-intellij='prime-run /home/stick/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea'
 alias p-php='prime-run /home/stick/.local/share/JetBrains/Toolbox/apps/phpstorm/bin/phpstorm'
 alias vih='vi ~/.config/hypr/hyprland.conf'
+alias autoClicker='bash ~/.config/hypr/autoClicker.sh'
 alias fa='fastanime anilist'
 alias ollama-llm="bash ~/Documents/ollama.sh"
 

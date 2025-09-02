@@ -24,6 +24,7 @@ services.displayManager.ly.enable = true;
   # All Hyprland-related packages
   environment.systemPackages = with pkgs; [
     rofi
+    kdePackages.breeze
     waybar 
     easyeffects
     polkit_gnome 

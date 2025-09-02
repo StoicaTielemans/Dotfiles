@@ -1,0 +1,101 @@
+/**
+ * Simplified Dark Rofi Theme
+ * No shared colors, solid dark background
+ **/
+
+/*****----- Configuration -----*****/
+configuration {
+    modi:            "drun";
+    show-icons:      true;
+    display-drun:    "Launch :";
+    display-run:     "";
+    display-filebrowser: "";
+    display-window:  "";
+    drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+    window-format:        "{w} · {c} · {t}";
+}
+
+/*****----- Global Colors -----*****/
+* {
+    background-colour: #1E1E1E;   /* Dark background */
+    backgroundt-colour: rgba(30, 30, 30, 0.3);
+    foreground-colour: #E0E0E0;   /* Light text */
+    border-colour:     #333333;   /* Border / selection base */
+    selected-background: #2C2C2C; /* Slightly darker for selected item */
+}
+
+/*****----- Main Window -----*****/
+window {
+    transparency: "real";
+    location:     center;
+    anchor:       center;
+    fullscreen:   true;
+    width:        100%;
+    height:       100%;
+    background-color: @backgroundt-colour;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    padding:      25%;
+    background-color: transparent;
+    children:     [ "inputbar", "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    padding: 25px;
+    background-color: @background-colour;
+    text-color:       @foreground-colour;
+    children: [ "prompt", "entry" ];
+}
+
+prompt, textbox-prompt-colon, entry {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+/*****----- Listview -----*****/
+listview {
+    columns:      1;
+    lines:        12;
+    cycle:        true;
+    dynamic:      true;
+    layout:       vertical;
+    fixed-height: true;
+    fixed-columns: true;
+    spacing:      10px;
+    background-color: @background-colour;
+    text-color:   @foreground-colour;
+}
+
+
+/*****----- Elements -----*****/
+element, element-icon, element-text {
+    spacing: 10px;
+    padding: 5px;
+    background-color: transparent;
+    text-color: inherit;
+    cursor: pointer;
+}
+
+/* Normal items */
+element.normal {
+    background-color: @background-colour;
+    text-color: @foreground-colour;
+}
+
+/* Selected item slightly darker */
+element.selected {
+    background-color: @selected-background;
+    text-color: @foreground-colour;
+}
+
+
+/*****----- Message / Textbox -----*****/
+message, textbox, error-message {
+    background-color: #2A2A2A;
+    text-color: @foreground-colour;
+    border-radius: 0px;
+}
+

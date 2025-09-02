@@ -3,19 +3,27 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 { config, lib, pkgs, ... }:
-
+let
+  home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz;
+in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./hyprland.nix
+      (import "${home-manager}/nixos")
     ];
+
+  home-manager.useUserPackages = true;
+  home-manager.useGlobalPkgs = true;
+  home-manager.backupFileExtension = "backup";
+  home-manager.users.stick = import ./home.nix;
 
   # Bootloader.
   boot.loader.grub = {
   enable = true;
   efiSupport = true; # set grub to UEFI mode device = "nodev"; 
-  devices = "nodev";# make grub not write to a disk MBR only EFI
+  devices = [ "nodev" ];# make grub not write to a disk MBR only EFI
 };
   # Use the systemd-boot EFI boot loader.
   #boot.loader.systemd-boot.enable = false;
