@@ -8,13 +8,14 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./hyprland.nix
     ];
 
   # Bootloader.
   boot.loader.grub = {
   enable = true;
-  efiSupport = true; # set grub to UEFI mode
-  device = "nodev"; # make grub not write to a disk MBR only EFI
+  efiSupport = true; # set grub to UEFI mode device = "nodev"; 
+  devices = "nodev";# make grub not write to a disk MBR only EFI
 };
   # Use the systemd-boot EFI boot loader.
   #boot.loader.systemd-boot.enable = false;
@@ -44,14 +45,34 @@
   #services.xserver.enable = true;
   services.xserver = {
 enable = true;
-xkb.options = "eurosign:e,caps:escape";
+#xkb.options = "eurosign:e,caps:escape";
 
 };
 
-# ly display manager
-services.displayManager.ly.enable = true;
-# hypland
-programs.hyprland.enable = true;
+# keyboard remap caps to esc
+
+services.kanata = {
+  enable = true;
+  keyboards = {
+    "logi".config = ''
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+(deflayer qwerty
+  grv 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  esc a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+    '';
+  };
+};
+
 
 
   
@@ -73,9 +94,15 @@ programs.hyprland.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
-  programs.git = {
-    enable = true;
-  };
+
+  # enable unfree packages like discord
+  nixpkgs.config.allowUnfree = true;
+
+  programs.git.enable = true; 
+
+fonts.packages = with pkgs; [
+  nerd-fonts.jetbrains-mono
+];
 
   programs.zsh.enable = true;
 
@@ -91,7 +118,10 @@ eza
 duf
 zoxide
 neovim
+chromium
 wezterm
+discord
+vesktop
 lazygit
      ];
    };
@@ -103,14 +133,12 @@ lazygit
    environment.systemPackages = with pkgs; [
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
+  kanata
 fastfetch
 waybar
 floorp
 kdePackages.dolphin
-cliphist
-wl-clipboard
 fzf
-rofi
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -124,7 +152,7 @@ rofi
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

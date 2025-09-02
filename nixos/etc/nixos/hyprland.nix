@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+
+# ly display manager
+services.displayManager.ly.enable = true;
+
+
   programs.hyprland = {
     enable = true;
     withUWSM = true; # Wayland session manager
@@ -18,9 +23,17 @@
 
   # All Hyprland-related packages
   environment.systemPackages = with pkgs; [
-    wezterm rofi-wayland floorp waybar xsettingsd easyeffects swww
-    polkit_gnome python3 swaynotificationcenter cliphist wl-clipboard
-    grim slurp brightnessctl playerctl walker
+    rofi
+    waybar 
+    easyeffects
+    polkit_gnome 
+    swaynotificationcenter 
+    cliphist 
+    wl-clipboard
+    grim
+    slurp
+    brightnessctl
+    playerctl
   ];
 
 }
