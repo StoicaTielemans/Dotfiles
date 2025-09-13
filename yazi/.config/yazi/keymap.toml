@@ -1,3 +1,13 @@
+# change tabs 
+[[mgr.prepend_keymap]]
+on = "H"
+run = "tab_switch -1 --relative"
+desc = "Switch to previous tab"
+
+[[mgr.prepend_keymap]]
+on = "L"
+run = "tab_switch 1 --relative"
+desc = "Switch to next tab"
 # relative-motions plugin
 [[mgr.prepend_keymap]]
 on = ["1"]
