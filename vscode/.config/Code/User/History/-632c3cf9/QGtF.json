@@ -1,0 +1,18 @@
+{
+    "workbench.colorTheme": "Alt Catppuccin Mocha",
+    "vim.enableNeovim": true,
+    "vim.flash.enable": true,
+    "vim.neovimPath": "/usr/bin/nvim",
+    "vim.neovimConfigPath": "~/.config/nvim_vscode/init.lua",
+    "vim.smartRelativeLine": true,
+    "files.associations": {
+        "*.tsx": "typescriptreact"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "github.copilot.nextEditSuggestions.enabled": true
+}

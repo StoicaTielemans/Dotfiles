@@ -1,0 +1,88 @@
+{
+    "telemetry.sqmId": "",
+    "telemetry.machineId": "0d0d9187932256e4954a235134b09f94b28b37ac28a44f1e6a5dacf3079422ab",
+    "telemetry.devDeviceId": "68771b43-ada5-47ba-a175-d472ab949ead",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [
+            {
+                "folderUri": "file:///home/stick/Code/github.com/StoicaTielemans/BEECA_website"
+            }
+        ],
+        "emptyWindows": []
+    },
+    "windowControlHeight": 35,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///home/stick/Code/github.com/StoicaTielemans/BEECA_website/BEECA_website": "__default__profile__",
+            "file:///home/stick/Code/github.com/StoicaTielemans/BEECA_website/public": "__default__profile__",
+            "file:///home/stick/Code/github.com/StoicaTielemans/BEECA_website": "__default__profile__"
+        },
+        "emptyWindows": {}
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/stick/Code/github.com/StoicaTielemans/BEECA_website",
+            "backupPath": "/home/stick/.config/Code/Backups/7b04712bafd91464f317e3f8154b9e32",
+            "uiState": {
+                "mode": 1,
+                "x": 2886,
+                "y": 29,
+                "width": 945,
+                "height": 1042
+            }
+        },
+        "openedWindows": []
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#1e1e2e",
+    "windowSplash": {
+        "zoomLevel": 0,
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#cdd6f4",
+            "background": "#1e1e2e",
+            "editorBackground": "#1e1e2e",
+            "titleBarBackground": "#11111b",
+            "titleBarBorder": "rgba(127, 132, 156, 0.15)",
+            "activityBarBackground": "#11111b",
+            "activityBarBorder": "rgba(127, 132, 156, 0.15)",
+            "sideBarBackground": "#181825",
+            "sideBarBorder": "rgba(127, 132, 156, 0.15)",
+            "statusBarBackground": "#11111b",
+            "statusBarBorder": "rgba(127, 132, 156, 0.15)",
+            "statusBarNoFolderBackground": "#11111b",
+            "windowBorder": "rgba(0, 0, 0, 0)"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 48,
+            "sideBarWidth": 174,
+            "auxiliaryBarWidth": 223,
+            "statusBarHeight": 22,
+            "windowBorder": false
+        }
+    },
+    "windowSplashWorkspaceOverride": {
+        "layoutInfo": {
+            "sideBarWidth": 174,
+            "auxiliaryBarWidth": 223,
+            "workspaces": {
+                "956d6f4ccd1527f15e509ec1319c0abf": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "a727e75b65eb526b1244fa2d193438bd": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "22d8b22006f7a6bafb2d618cd82cc3c0": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                }
+            }
+        }
+    }
+}

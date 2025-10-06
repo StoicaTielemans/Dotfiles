@@ -23,12 +23,12 @@ while true; do
     sort -n | cut -d':' -f2- |
     while read -r img; do
       for d in $( # see swww-query(1)
-        swww query | grep -Po "^[^:]+"
+        swww query | awk '{print $2}' | sed s/://
       ); do
         # Get next random image for this display, or re-shuffle images
         # and pick again if no more unused images are remaining
         [ -z "$img" ] && if read -r img; then true; else break 2; fi
-        swww img --resize "$RESIZE_TYPE" --outputs "$d" "$img" -t random
+        swww img --resize "$RESIZE_TYPE" --outputs "$d" "$img"
         unset -v img # Each image should only be used once per loop
       done
       sleep "${2:-$DEFAULT_INTERVAL}"
