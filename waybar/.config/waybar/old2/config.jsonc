@@ -20,7 +20,9 @@
   "modules-left": [
     "custom/os_button",
     "hyprland/workspaces",
-    "custom/info"
+    "memory",
+    "cpu",
+    "custom/gpu-usage"
   ],
   "modules-center": [
     "mpris",
@@ -55,14 +57,6 @@
       "10": "十"
     },
     "sort-by-number": true
-  },
-  "custom/info": {
-    "format": "󰠂 {}",
-    "interval": 30,
-    "exec": "bash ~/.config/hypr/bar/cpu-gpu-memory-bar-module2.sh",
-    "return-type": "json",
-    "format-icons": "󰾲",
-    "on-click-right": "kitty btop"
   },
   "custom/os_button": {
     "format": " 󰣇 ",
