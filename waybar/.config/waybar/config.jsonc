@@ -11,7 +11,6 @@
 {
   "layer": "top",
   "position": "top",
-  "mod": "dock",
   "exclusive": true,
   "gtk-layer-shell": false,
   "margin-top": 0,
@@ -20,22 +19,29 @@
   "modules-left": [
     "custom/os_button",
     "hyprland/workspaces",
-    "custom/info"
+    "custom/info",
+    "privacy"
   ],
   "modules-center": [
-    "mpris",
-    "hyprland/window"
+    "mpris"
+    // "hyprland/window"
   ],
   "modules-right": [
     "pulseaudio#input",
     "pulseaudio",
-    "network",
+    "custom/network-info",
+    // "network",
     "battery",
     "backlight",
     "clock",
-    "custom/swaync",
+    // "custom/swaync",
     "tray"
   ],
+  "custom/os_button": {
+    "format": " 󰣇 ",
+    "on-click-right": "wlogout",
+    "tooltip": false
+  },
   "hyprland/workspaces": {
     "format": "{icon}",
     "icon-size": 32,
@@ -57,37 +63,44 @@
     "sort-by-number": true
   },
   "custom/info": {
-    "format": "󰠂 {}",
-    "interval": 30,
-    "exec": "bash ~/.config/hypr/bar/cpu-gpu-memory-bar-module2.sh",
+    "format": "  {}",
+    "interval": 5,
+    "exec": "bash ~/.config/hypr/scripts/bar/waybar-cpu-gpu-memory-module.sh",
     "return-type": "json",
-    "format-icons": "󰾲",
     "on-click-right": "kitty btop"
   },
-  "custom/os_button": {
-    "format": " 󰣇 ",
-    "on-click-right": "wlogout",
-    "tooltip": false
-  },
-  "custom/swaync": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 18,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      }
+    ],
+    "ignore-monitor": true,
+    "ignore": [
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-in",
+        "name": "cava"
+      },
+      {
+        "type": "screenshare",
+        "name": "obs"
+      }
+    ]
   },
   "mpris": {
     "on-click-right": "eww open musiccenter --toggle --no-daemonize &",
@@ -105,28 +118,27 @@
     },
     "tooltip": false
   },
-  "memory": {
-    "format": " {used}GB",
-    "tooltip-format": " {used}/{total} GiB | {percentage}%",
-    "interval": 5
-  },
-  "cpu": {
-    "format": "󰻠 {usage}%",
-    "format-alt": "󰻠 {avg_frequency} GHz",
-    "interval": 5
-  },
+  // "memory": {
+  //   "format": " {used}GB",
+  //   "tooltip-format": " {used}/{total} GiB | {percentage}%",
+  //   "interval": 5
+  // },
+  // "cpu": {
+  //   "format": "󰻠 {usage}%",
+  //   "format-alt": "󰻠 {avg_frequency} GHz",
+  //   "interval": 5
+  // },
   // https://github.com/polponline/gpu-usage-waybar
-  "custom/gpu-usage": {
-    "format": "󰠂 {}",
-    "exec": "/home/stick/.cargo/bin/gpu-usage-waybar",
-    "return-type": "json",
-    "format-icons": "󰾲",
-    "on-click-right": "kitty nvtop"
-  },
+  // "custom/gpu-usage": {
+  //   "format": "󰠂 {}",
+  //   "exec": "/home/stick/.cargo/bin/gpu-usage-waybar",
+  //   "return-type": "json",
+  //   "format-icons": "󰾲",
+  //   "on-click-right": "kitty nvtop"
+  // },
   "battery": {
-    // "on-click": "eww open actioncenter --toggle --no-daemonize &",
     "states": {
-      "good": 95,
+      "good": 80,
       "warning": 30,
       "critical": 20
     },
@@ -155,26 +167,11 @@
       ""
     ]
   },
-  "network": {
-    "format-wifi": "{icon}",
-    "format-ethernet": "󰈀 {bandwidthDownBits}",
-    "format-disconnected": "󰌙",
-    "tooltip-format": "{icon} {essid}",
-    "format-icons": [
-      "󰤯",
-      "󰤟",
-      "󰤢",
-      "󰤢",
-      "󰤨"
-    ],
-    // "on-click": "eww open actioncenter --toggle --no-daemonize &",
-    "on-click-right": "kitty -e 'nmtui'"
-  },
   "pulseaudio": {
     "max-volume": 150,
     "scroll-step": 5,
     "format": "{icon} {volume}%",
-    "tooltip-format": "{icon}  {volume}%",
+    "tooltip": false,
     "format-icons": {
       "headphone": "",
       "format-muted": "",
@@ -194,12 +191,35 @@
     "format-source": "{volume}%",
     "format-source-muted": " off",
     "format": "{format_source}",
+    "tooltip": false,
     "scroll-step": 5,
     "smooth-scrolling-threshold": 1,
     "max-volume": 100,
-    "on-click-middle": "pavucontrol",
+    "on-click-right": "pavucontrol",
     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%"
+  },
+  // "network": {
+  //   "format-wifi": "{icon}",
+  //   "format-ethernet": "󰈀 {bandwidthDownBits}",
+  //   "format-disconnected": "󰌙",
+  //   "tooltip-format": "{icon} {essid}",
+  //   "format-icons": [
+  //     "󰤯",
+  //     "󰤟",
+  //     "󰤢",
+  //     "󰤢",
+  //     "󰤨"
+  //   ],
+  //   // "on-click": "eww open actioncenter --toggle --no-daemonize &",
+  //   "on-click-right": "kitty -e 'nmtui'"
+  // },
+  "custom/network-info": {
+    "format": "󰈀  {}",
+    "interval": 5,
+    "exec": "bash ~/.config/hypr/scripts/bar/waybar-network-module.sh",
+    "return-type": "json",
+    "on-click-right": "kitty btop"
   },
   "clock": {
     "format": " {:L%d/%m/%y| %H:%M}",
@@ -226,6 +246,26 @@
       "on-scroll-down": "shift_down"
     }
   },
+  // "custom/swaync": {
+  //   "tooltip": false,
+  //   "format": "{icon}",
+  //   "format-icons": {
+  //     "notification": "<span foreground='red'><sup></sup></span>",
+  //     "none": "",
+  //     "dnd-notification": "<span foreground='red'><sup></sup></span>",
+  //     "dnd-none": "",
+  //     "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+  //     "inhibited-none": "",
+  //     "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+  //     "dnd-inhibited-none": ""
+  //   },
+  //   "return-type": "json",
+  //   "exec-if": "which swaync-client",
+  //   "exec": "swaync-client -swb",
+  //   "on-click": "swaync-client -t -sw",
+  //   "on-click-right": "swaync-client -d -sw",
+  //   "escape": true
+  // },
   "tray": {
     "icon-size": 18,
     "spacing": 8
