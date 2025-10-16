@@ -21,7 +21,7 @@ window, #waybar {
 /* tooltip back and foreground */
 tooltip label{
     background: @background3;
-  padding:20;
+    padding:20px;
     font-size:15px;
     color: @pink;
     border: 3px solid @pink;
@@ -71,6 +71,9 @@ tooltip label{
     border: 2px solid @green;
     padding: 0px 10px;
     margin: 0px 1.5px;
+}
+#mpris{
+  font-size:9px;
 }
 #memory, #privacy{
     background-color: @background;
@@ -140,7 +143,7 @@ tooltip label{
 
 #tray {
     background: @background;
-    padding: 0px 6px 0px 0px;
+    padding: 0px 6px;
 }
 #tray menu {
     font-size: 150px;
@@ -148,4 +151,8 @@ tooltip label{
     color: @pink;
     padding: 5px;
     border: 3px solid @pink;
+}
+
+#tray menu label {
+  font-size: 15px;
 }

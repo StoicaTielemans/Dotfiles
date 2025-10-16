@@ -1,0 +1,175 @@
+[general]
+live_config_reload = true
+
+
+# =====================
+# Keyboard bindings
+# =====================
+# Enter Vi mode
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "V"
+mode = "~Vi"
+mods = "Control"
+
+# Exit Vi mode
+[[keyboard.bindings]]
+key = "Escape"
+mode = "Vi"
+action = "ToggleViMode"
+
+# Copy selection to clipboard (Ctrl+Shift+C)
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+# Paste from clipboard (Ctrl+Shift+V)
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+# =====================
+# Font
+# =====================
+[font]
+size = 12.5
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold Italic"
+
+# Slight line spacing for readability
+[font.offset]
+y = 1
+
+# =====================
+# Window
+# =====================
+[window]
+decorations = "Buttonless"
+blur = true
+opacity = 0.85
+dynamic_title = true
+startup_mode = "Windowed"
+
+[window.padding]
+x = 0
+y = 0
+
+# =====================
+# Scrolling
+# =====================
+[scrolling]
+history = 10000
+multiplier = 3
+
+# =====================
+# Cursor
+# =====================
+[cursor]
+style = "Block"
+unfocused_hollow = true
+blink_interval = 500
+
+# =====================
+# Bell (disable visual bell)
+# =====================
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+
+# =====================
+# Catppuccin Mocha Theme
+# =====================
+[colors.primary]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+
+[colors.cursor]
+text = "#1e1e2e"
+cursor = "#f5e0dc"
+
+[colors.vi_mode_cursor]
+text = "#1e1e2e"
+cursor = "#b4befe"
+
+[colors.search.matches]
+foreground = "#1e1e2e"
+background = "#a6e3a1"
+
+[colors.search.focused_match]
+foreground = "#1e1e2e"
+background = "#f9e2af"
+
+[colors.hints.start]
+foreground = "#1e1e2e"
+background = "#f5c2e7"
+
+[colors.hints.end]
+foreground = "#1e1e2e"
+background = "#a6adc8"
+
+[colors.line_indicator]
+foreground = "None"
+background = "None"
+
+[colors.selection]
+text = "#1e1e2e"
+background = "#f5e0dc"
+
+[colors.normal]
+black = "#45475a"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#f5c2e7"
+cyan = "#94e2d5"
+white = "#bac2de"
+
+[colors.bright]
+black = "#585b70"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#f5c2e7"
+cyan = "#94e2d5"
+white = "#a6adc8"
+
+[colors.dim]
+black = "#313244"
+red = "#e64553"
+green = "#8abf84"
+yellow = "#deb872"
+blue = "#7aa2f7"
+magenta = "#c883d2"
+cyan = "#6ec5c4"
+white = "#a6adc8"
+
+# =====================
+# Misc tweaks
+# =====================
+[selection]
+save_to_clipboard = true
+
+[terminal]
+shell = { program = "/bin/zsh", args = [
+  "-l",
+  "-c",
+  "fastfetch --config neofetch.jsonc; exec zsh",
+] }

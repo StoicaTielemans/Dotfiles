@@ -27,6 +27,7 @@
     // "hyprland/window"
   ],
   "modules-right": [
+    "custom/pacman",
     "pulseaudio#input",
     "pulseaudio",
     "custom/network-info",
@@ -106,7 +107,7 @@
     "on-click-right": "eww open musiccenter --toggle --no-daemonize &",
     "format": "{player_icon} ({dynamic})",
     "format-paused": "{status_icon} <i>{dynamic}</i>",
-    "dynamic-len": 30,
+    "dynamic-len": 50,
     "player-icons": {
       "default": "▶ ",
       "mpv": " ",
@@ -166,6 +167,13 @@
       "",
       ""
     ]
+  },
+  "custom/pacman": {
+    "format": "󰏖 {}",
+    "interval": "once",
+    "exec": "bash ~/.config/hypr/scripts/bar/waybar-pacman-update.sh",
+    "return-type": "json",
+    "on-click-right": "kitty btop"
   },
   "pulseaudio": {
     "max-volume": 150,

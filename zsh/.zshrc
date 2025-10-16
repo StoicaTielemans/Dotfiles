@@ -1,43 +1,62 @@
-# Enable Powerlevel10k instant prompt
+# =====================
+# Powerlevel10k configuration
+# =====================
+# Suppress instant prompt console output warnings
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+# =====================
+# Powerlevel10k instant prompt
+# =====================
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# =====================
 # PATH
+# =====================
 export PATH=/home/stick/.cargo/bin:$PATH
 export PATH=$PATH:$HOME/go/bin
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export VCPKG_ROOT=~/vcpkg
-#XDG_MENU_PREFIX=arch- kbuildsycoca6
 
+# =====================
 # History options
+# =====================
 HISTFILE=~/.histfile
 HISTSIZE=5000
 SAVEHIST=$HISTSIZE
 setopt appendhistory sharehistory hist_ignore_space \
        hist_ignore_all_dups hist_save_no_dups hist_ignore_dups hist_find_no_dups
 
+# =====================
 # Completion styling
+# =====================
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
+# =====================
 # Keybindings
+# =====================
 if [[ -z "$NVIM" ]]; then
   bindkey -v
 fi
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
+# =====================
 # Editor
+# =====================
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+# =====================
 # Aliases
+# =====================
 alias ls='eza'
 alias ll='eza -al'
 alias tree='eza --tree'
-alias df='duf' # old dysk
+alias df='duf'
 alias t='trash'
 
 alias scanIp='sudo arp-scan --localnet '
@@ -58,7 +77,9 @@ alias autoClicker='bash ~/.config/hypr/autoClicker.sh'
 alias fa='fastanime anilist'
 alias ollama-llm="bash ~/Documents/ollama.sh"
 
-# yazi integration
+# =====================
+# Yazi integration
+# =====================
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
@@ -67,7 +88,9 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# =====================
 # SSH / SSHFS functions
+# =====================
 sshfs_laptop() {
     if [ -z "$1" ]; then
         echo "Please provide the last number of the IP address"
@@ -85,7 +108,9 @@ ssh_laptop() {
     ssh stick@192.168.0.$1
 }
 
+# =====================
 # Remove installed package via fzf
+# =====================
 remove-pkg() {
   local pkg
   pkg=$(expac -H M "%n\t%m" $(pacman -Qe) | \
@@ -104,51 +129,68 @@ remove-pkg() {
   fi
 }
 
+# =====================
 # Theme settings
+# =====================
 export GTK_THEME="catppuccin-mocha-lavender-standard+default"
 export GTK_ICON_THEME="Fluent-purple-dark"
 export XCURSOR_THEME="Fluent-purple-dark"
 export XCURSOR_SIZE=24
 
+# =====================
 # Fuzzy finder
+# =====================
 source <(fzf --zsh)
 
-# Load Zinit plugin manager
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing Zinit…%f"
-    mkdir -p "$HOME/.local/share/zinit"
-    chmod g-rwX "$HOME/.local/share/zinit"
-    git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git"
+# =====================
+# Zinit plugin manager
+# =====================
+if [[ -f "$HOME/.local/share/zinit/zinit.git/zinit.zsh" ]]; then
+    source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+    autoload -Uz _zinit
+    (( ${+_comps} )) && _comps[zinit]=_zinit
+
+    # Powerlevel10k
+    zinit ice depth=1; zinit light romkatv/powerlevel10k
+
+    # Zsh plugins
+    zinit light zsh-users/zsh-completions
+    zinit light zsh-users/zsh-autosuggestions
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#fff,bg=#11111b,bold,underline"
+
+    if [[ -z "$NVIM" ]]; then
+        zinit ice depth=1
+        zinit light jeffreytse/zsh-vi-mode
+    fi
+
+    zinit light zsh-users/zsh-syntax-highlighting
 fi
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
 
-# Powerlevel10k
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-
-# Zsh plugins
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#fff,bg=#11111b ,bold,underline"
-
-if [[ -z "$NVIM" ]]; then
-  zinit ice depth=1
-  zinit light jeffreytse/zsh-vi-mode
-fi
-
-zinit light zsh-users/zsh-syntax-highlighting
-
+# =====================
 # Zoxide
+# =====================
 eval "$(zoxide init zsh)"
 
+# =====================
 # Envman
+# =====================
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+# =====================
 # Completion system
+# =====================
 fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
 zstyle :compinstall filename '/home/stick/.zshrc'
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# =====================
+# Powerlevel10k prompt config
+# =====================
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# =====================
+# Keyboard: Vi mode (Alacritty / Zsh)
+# =====================
+bindkey -v
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
