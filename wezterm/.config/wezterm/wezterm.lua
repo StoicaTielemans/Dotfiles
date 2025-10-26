@@ -25,7 +25,7 @@ end
 -- === Choose shell path based on distro ===
 local distro = detect_distro()
 if distro == "arch" then
-	config.default_prog = { "/bin/zsh", "-c", "fastfetch --config neofetch.jsonc;dstask; exec zsh" }
+	config.default_prog = { "/bin/zsh", "-c", "fastfetch --config neofetch.jsonc; exec zsh" }
 elseif distro == "nixos" then
 	config.default_prog = { "/run/current-system/sw/bin/zsh", "-c", "fastfetch --config neofetch.jsonc; exec zsh" }
 else

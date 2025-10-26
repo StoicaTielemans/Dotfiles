@@ -3,7 +3,7 @@
 # a given directory at a set interval.
 
 # start background deamon
-swww-daemon
+# swww-daemon
 
 DEFAULT_INTERVAL=300 # In seconds
 # See swww-img(1)

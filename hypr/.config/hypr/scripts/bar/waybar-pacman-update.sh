@@ -37,5 +37,5 @@ if [[ $count -gt 0 ]]; then
   # Output JSON
   jq -nc --arg text "$text" --arg tooltip "$tooltip" '{text: $text, tooltip: $tooltip}'
 else
-
+  exit
 fi
