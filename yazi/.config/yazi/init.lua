@@ -6,3 +6,5 @@
 require("relative-motions"):setup({ show_numbers = "relative", show_motion = true, enter_mode = "first" })
 -- plugin recycle-bin
 require("recycle-bin"):setup()
+-- git inline
+require("git"):setup()

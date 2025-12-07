@@ -23,5 +23,15 @@ use = "grappas/wl-clipboard"
 rev = "e9a38e4"
 hash = "6b8e5d6b09626facec713923d3ddb54b"
 
+[[plugin.deps]]
+use = "KKV9/compress"
+rev = "c264639"
+hash = "e17c11b605d989568a1d1741ca17c584"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "19dc890"
+hash = "27ca02f49fd236b5cc7bf03c243859fe"
+
 [flavor]
 deps = []

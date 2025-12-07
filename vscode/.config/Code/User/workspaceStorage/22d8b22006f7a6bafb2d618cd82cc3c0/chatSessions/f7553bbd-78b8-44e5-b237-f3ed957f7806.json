@@ -118,6 +118,11 @@
         },
         "details": "GPT-4.1 • 0x"
       },
+      "responseMarkdownInfo": [
+        {
+          "suggestionId": "sgt-ea182125-2355-4076-a362-06554abbeaef"
+        }
+      ],
       "followups": [],
       "isCanceled": false,
       "agent": {
@@ -496,6 +501,11 @@
         },
         "details": "GPT-4.1 • 0x"
       },
+      "responseMarkdownInfo": [
+        {
+          "suggestionId": "sgt-bc85a43d-32cd-402b-a3e3-88c3435b1e02"
+        }
+      ],
       "followups": [],
       "isCanceled": false,
       "agent": {
@@ -1542,6 +1552,17 @@
         },
         "details": "GPT-4.1 • 0x"
       },
+      "responseMarkdownInfo": [
+        {
+          "suggestionId": "sgt-dde1695d-1f4c-4f97-af8c-32fc571ffed6"
+        },
+        {
+          "suggestionId": "sgt-7a10b882-a000-4b78-9a20-43f752f5fd48"
+        },
+        {
+          "suggestionId": "sgt-2a7a07d2-0f3d-4fb1-8168-12c1d7a83bd5"
+        }
+      ],
       "followups": [],
       "isCanceled": false,
       "agent": {
@@ -1801,6 +1822,26 @@
         },
         "details": "GPT-4.1 • 0x"
       },
+      "responseMarkdownInfo": [
+        {
+          "suggestionId": "sgt-11c08db8-4b82-4342-acb8-6ca8528b1e34"
+        },
+        {
+          "suggestionId": "sgt-ef59163d-fb52-49ee-bf7c-c34d0f99fc70"
+        },
+        {
+          "suggestionId": "sgt-0b25e10a-108a-4c7e-868d-b05f316e4379"
+        },
+        {
+          "suggestionId": "sgt-d51ada9c-bf3a-4c81-aa6e-cb85b43b186b"
+        },
+        {
+          "suggestionId": "sgt-fea955f7-5e1c-4b17-b2f8-bfd18d79ac67"
+        },
+        {
+          "suggestionId": "sgt-2599ef13-5537-4225-b6b1-d66370dce91b"
+        }
+      ],
       "followups": [],
       "isCanceled": false,
       "agent": {
@@ -2086,6 +2127,20 @@
         },
         "details": "GPT-4.1 • 0x"
       },
+      "responseMarkdownInfo": [
+        {
+          "suggestionId": "sgt-c6d9f303-ae7a-4933-b1b8-1fb93c8d1890"
+        },
+        {
+          "suggestionId": "sgt-0647fa6a-83a9-4f20-8a17-0a7f06b91de4"
+        },
+        {
+          "suggestionId": "sgt-06cc01f3-5306-4b82-be12-1f76a80bd50a"
+        },
+        {
+          "suggestionId": "sgt-92214cb7-32e0-404b-a9a0-e0857c9837ae"
+        }
+      ],
       "followups": [],
       "isCanceled": false,
       "agent": {

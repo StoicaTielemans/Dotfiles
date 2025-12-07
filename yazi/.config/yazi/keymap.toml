@@ -105,3 +105,39 @@ run = "plugin mount"
 [[mgr.prepend_keymap]]
 on = "Y"
 run = ["plugin wl-clipboard"]
+
+# compres plugin
+[[mgr.prepend_keymap]]
+on = ["c", "a", "7"]
+run = "plugin compress .7z "
+desc = "Archive selected files with 7zip"
+
+[[mgr.prepend_keymap]]
+on = ["c", "a", "z"]
+run = "plugin compress 'tar.zst'"
+desc = "Archive selected files with tar zstd"
+
+[[mgr.prepend_keymap]]
+on = ["c", "a", "a"]
+run = "plugin compress .zip "
+desc = "Archive selected files with zip"
+
+[[mgr.prepend_keymap]]
+on = ["c", "a", "p"]
+run = "plugin compress -p"
+desc = "Archive selected files (password)"
+
+[[mgr.prepend_keymap]]
+on = ["c", "a", "h"]
+run = "plugin compress -ph"
+desc = "Archive selected files (password+header)"
+
+[[mgr.prepend_keymap]]
+on = ["c", "a", "l"]
+run = "plugin compress -l"
+desc = "Archive selected files (compression level)"
+
+[[mgr.prepend_keymap]]
+on = ["c", "a", "u"]
+run = "plugin compress -phl"
+desc = "Archive selected files (password+header+level)"
