@@ -1,0 +1,77 @@
+pkgname=my-declarative-package-list
+pkgver=1.0
+pkgrel=1
+pkgdesc="My personal declarative package list"
+arch=('any')
+url="https://yourwebsite.com"
+license=('GPL')
+# This is where the magic happens:
+# To install run makepkg -si
+# To add things just increment pkgver and rerun makepkg -si
+depends=(
+    'firefox'
+    'chromium'
+    'helium-browser-bin'
+    'neovim'
+    'git'
+    'alacritty'
+    'kitty'
+    'fastfetch'
+    'visual-studio-code-bin'
+    # modern ls
+    'eza'
+    # image viewer
+    'feh'
+    'flatpak'
+    'ark'
+    'btop'
+    'btrfs-progs'
+    'bat'
+    'curseforge'
+    'modrinth-app-bin'
+    'dbeaver'
+    'docker'
+    'docker-compose-bin'
+# better df
+    'duf'
+# use phone camera for pc
+    'droidcam'
+# convert .deb to arch packages
+    'debtap'
+    'arch-update'
+    'f1multiviewer-bin'
+    'krita'
+    'krita-ai-tools'
+    'nemo'
+    'easyeffects'
+    'e2fsprogs'
+    'spotify-adblock-git'
+    'tailscale'
+    'vesktop-bin'
+    'vial-appimage'
+# better cd
+    'zoxide'
+    'yazi'
+    'zsh'
+    'zsh-completions'
+    'lazygit'
+    'update-grub'
+    'chafa'
+    'grub'
+## hyprland stuff
+    'hyprland'
+    'hyprpicer'
+    'hyprsunset'
+    'hyprpaper'
+    'wlogout'
+    'waybar'
+    'wayfreeze-git'
+    'ttf-jetbrains-mono'
+    'ttf-jetbrains-mono-nerd'
+#backgrounds
+    'awww'
+    'cliphist'
+
+
+
+)
