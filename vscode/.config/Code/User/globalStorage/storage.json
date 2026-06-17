@@ -9,7 +9,7 @@
                 "folderUri": "file:///home/stick/Code/github.com/StoicaTielemans/BEECA_website"
             },
             {
-                "folderUri": "file:///home/stick/Code/DotNetAiChallange1"
+                "folderUri": "file:///home/stick/Code/github.com/StoicaTielemans/Portfolio"
             }
         ],
         "emptyWindows": []
@@ -20,20 +20,21 @@
             "file:///home/stick/Code/github.com/StoicaTielemans/BEECA_website/BEECA_website": "__default__profile__",
             "file:///home/stick/Code/github.com/StoicaTielemans/BEECA_website/public": "__default__profile__",
             "file:///home/stick/Code/github.com/StoicaTielemans/BEECA_website": "__default__profile__",
-            "file:///home/stick/Code/DotNetAiChallange1": "__default__profile__"
+            "file:///home/stick/Code/DotNetAiChallange1": "__default__profile__",
+            "file:///home/stick/Code/github.com/StoicaTielemans/Portfolio": "__default__profile__"
         },
         "emptyWindows": {}
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/stick/Code/DotNetAiChallange1",
-            "backupPath": "/home/stick/.config/Code/Backups/7c4b6f8abb58d1870e721375dde50b61",
+            "folder": "file:///home/stick/Code/github.com/StoicaTielemans/Portfolio",
+            "backupPath": "/home/stick/.config/Code/Backups/9dc054873adbad1371e14a1a97b540d6",
             "uiState": {
-                "mode": 1,
-                "x": 0,
-                "y": 20,
+                "mode": 0,
+                "x": 1,
+                "y": 0,
                 "width": 1920,
-                "height": 1060
+                "height": 1080
             }
         },
         "openedWindows": []
@@ -63,16 +64,16 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 35,
             "activityBarWidth": 48,
-            "sideBarWidth": 170,
-            "auxiliaryBarWidth": 427,
+            "sideBarWidth": 323,
+            "auxiliaryBarWidth": 0,
             "statusBarHeight": 22,
             "windowBorder": false
         }
     },
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
-            "sideBarWidth": 170,
-            "auxiliaryBarWidth": 427,
+            "sideBarWidth": 323,
+            "auxiliaryBarWidth": 426,
             "workspaces": {
                 "956d6f4ccd1527f15e509ec1319c0abf": {
                     "sideBarVisible": true,
@@ -89,6 +90,10 @@
                 "9a4d1b0526a0f954d2a08a2d221d9de7": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": true
+                },
+                "025b6062f1484eb534242c96f4b65c44": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
                 }
             }
         }

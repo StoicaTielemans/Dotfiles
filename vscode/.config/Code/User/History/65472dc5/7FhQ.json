@@ -1,0 +1,341 @@
+[
+  {
+    "id": 1,
+    "title": "Software Engineering Appie's Legobib",
+    "description": "Voor het vak Software Engineering ontwikkelden we als groep een Angular applicatie met een DotNet Api voor ziekenhuis Geel.",
+    "fullDescription": "Voor het vak Software Engineering ontwikkelden we als groep een Angular-applicatie met een .NET API voor ziekenhuis Geel.\n\n De applicatie is een digitale lego-bibliotheek waar kinderen die in het ziekenhuis verblijven lego sets kunnen uitlenen. Nieuwe lego sets worden automatisch in het systeem toegevoegd via een externe API.\n\n Een admin kan de beschikbare sets toewijzen aan de ziekenhuizen die binnen de applicatie gedefinieerd zijn. Daarnaast kan een admin nieuwe gebruikers aanmaken via Auth0. Medewerkers hebben de mogelijkheid om lego sets op te geven voor reiniging wanneer dit nodig is.\n\n Tot slot beschikt de admin over een volledige CRUD-beheeromgeving waarmee alle inhoud van de website beheerd kan worden, zoals het instellen en beheren van sponsors.",
+    "image": "/software-eng/homepage.png",
+    "extraImages": [
+      "/software-eng/homepage.png",
+      "/software-eng/catalog.png",
+      "/software-eng/gebruikerCrud.png",
+      "/software-eng/legoCrud.png",
+      "/software-eng/legosetCrud.png",
+      "/software-eng/sponsorCrud.png",
+      "/software-eng/sponsorPage.png",
+      "/software-eng/ziekenhuisCrud.png"
+    ],
+    "course": "Software Engineering",
+    "team": "Groepsproject met 4 teamleden",
+    "technologies": [
+      {
+        "name": "DotNet Core",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
+      },
+      {
+        "name": "Angular",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg"
+      },
+      {
+        "name": "microsoft Sql Server",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg"
+      },
+      {
+        "name": "Azure",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg"
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+      },
+      {
+        "name": "Jira",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg"
+      }
+    ],
+    "link": "",
+    "github": "",
+"features": [
+  "Lego sets uitlenen voor kinderen in het ziekenhuis",
+  "Automatisch toevoegen van nieuwe lego sets via een externe API",
+  "Toewijzen van lego sets aan ziekenhuizen binnen de applicatie",
+  "Aanmaken van nieuwe gebruikers via Auth0",
+  "Opgeven van lego sets voor reiniging door medewerkers",
+  "Volledig CRUD-beheer voor website-inhoud zoals sponsors",
+  "Aparte websites voor gebruikers, medewerkers en admins, met verschillende functionaliteiten"
+],
+"learnings": [
+  "Samenwerken aan een volledige full-stack applicatie in teamverband",
+  "Een .NET API opzetten en koppelen aan een Angular frontend",
+  "Azure gebruiken voor hosting en deployment van de applicatie",
+  "CI/CD pipelines opzetten om het deployment-proces te automatiseren",
+  "Werken met een externe API voor het automatisch inladen van data",
+  "Gebruikersbeheer implementeren via Auth0",
+  "Ziekenhuisspecifieke functionaliteit ontwikkelen voor een echte opdrachtgever",
+  "Gebruiksvriendelijke UX/UI ontwerpen voor een jonge doelgroep"
+],
+    "contribution": "Voor dit project werkten we op een agile manier, waardoor ik niet per se verantwoordelijk was voor specifieke pagina's, maar doorheen het hele project aan verschillende onderdelen heb meegewerkt. Een groot deel van mijn bijdrage lag bij de infrastructuur en configuratie, zoals het opzetten van Azure en het integreren van Auth0 voor gebruikersbeheer. Daarnaast heb ik CI/CD pipelines opgezet om het deployment-proces te automatiseren.  Aan de frontend-kant heb ik de navigatie en footer volledig werkend gemaakt. Ook heb ik verschillende CRUD-pagina's uitgewerkt, waaronder de functionaliteit om vermiste lego sets op te zoeken en de volledige beheerpagina voor ziekenhuizen." 
+  },
+  {
+    "id": 2,
+    "title": "AI.Net RoomyAi",
+    "description": "Voor het vak Software Engineering ontwikkelden we als groep een Angular applicatie met een DotNet Api voor ziekenhuis Geel.",
+    "fullDescription": "Voor het vak AI.NET ontwikkelden we als groep een AI-gestuurde chatbot applicatie genaamd RoomyAI.\n\n De applicatie is een intelligente meeting- en ruimtebeheer assistent waarmee gebruikers via natuurlijke taal vergaderingen en vergaderzalen kunnen beheren. In plaats van traditionele formulieren en knoppen communiceert de gebruiker rechtstreeks met de AI om acties uit te voeren.\n\nVoor vergaderbeheer biedt de applicatie volledige functionaliteit. De AI kan nieuwe meetings aanmaken, bestaande meetings bijwerken zoals locatie, tijdstip, titel en beschrijving, en meetings verwijderen. Deelnemers kunnen worden toegevoegd aan een meeting waarbij het systeem automatisch controleert of een deelnemer al bestaat. Indien dat het geval is wordt de bestaande deelnemer gekoppeld, anders wordt er automatisch een nieuwe deelnemer aangemaakt. Deelnemers kunnen ook worden verwijderd uit meetings.\n\nVoor ruimtebeheer kan de gebruiker een overzicht opvragen van alle beschikbare vergaderzalen of de details van een specifieke zaal bekijken. Zaalinformatie kan worden aangepast en nieuwe zalen kunnen worden aangemaakt. Bij het verwijderen van een zaal worden gekoppelde afbeeldingen automatisch verwijderd uit de Azure Blob Storage.  \n\nAfbeeldingen voor zalen worden opgeslagen in Azure Blob Storage onder de naam van het bijhorende zaal-ID.",
+    "image": "/ai-net-2/1.png",
+    "extraImages": [
+      "/ai-net-2/1.png",
+      "/ai-net-2/2.png",
+      "/ai-net-2/3.png",
+      "/ai-net-2/4.png",
+      "/ai-net-2/5.png",
+      "/ai-net-2/6.png",
+      "/ai-net-2/7.png",
+      "/ai-net-2/8.png"
+    ],
+    "course": "AI.Net",
+    "team": "Groepsproject met 2 teamleden",
+    "technologies": [
+      {
+        "name": "DotNet Core",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
+      },
+      {
+        "name": "microsoft Sql Server",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg"
+      },
+      {
+        "name": "Azure",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg"
+      }
+    ],
+    "link": "",
+    "github": "",
+"features": [
+  "Ai aanspreekbaar via teams",
+  "Meetings aanmaken, bewerken en verwijderen via de AI-chatbot",
+  "Deelnemers toevoegen aan en verwijderen uit meetings met automatische controle op bestaande gebruikers",
+  "Volledig overzicht opvragen van alle meetings met gedetailleerde informatie per meeting",
+  "Vergaderzalen aanmaken, bewerken en verwijderen",
+  "Volledig overzicht opvragen van alle vergaderzalen met gedetailleerde informatie per zaal",
+  "Afbeeldingen van vergaderzalen opslaan en beheren via Azure Blob Storage",
+  "Automatisch verwijderen van zaalafbeeldingen bij het verwijderen van een zaal",
+  "Volledige bediening via natuurlijke taal zonder gebruik van traditionele formulieren"
+],
+"learnings": [
+  "Een AI-chatbot bouwen die via natuurlijke taal API-endpoints kan aanroepen",
+  "Integratie van een AI-core koppelen aan een bestaande REST API",
+  "Een Microsoft Teams-bot configureren en deployen via Azure Bot Service",
+  "Azure gebruiken voor hosting en deployment van de applicatie",
+  "Afbeeldingen opslaan en beheren via Azure Blob Storage",
+  "Gestructureerde kaartweergaven implementeren in plaats van platte tekstantwoorden"
+],
+    "contribution": "Voor dit project werkten we met twee delen: een API en een AI-core.\n\n Ik heb de volledige AI-core uitgewerkt. Dit omvat het koppelen van de AI-chatbot aan de API-endpoints, zodat de chatbot deze automatisch kan aanroepen op basis van wat de gebruiker vraagt. Daarnaast heb ik ervoor gezorgd dat de antwoorden en resultaten niet als gewone platte tekst worden weergegeven, maar als overzichtelijke kaarten die de informatie op een gebruiksvriendelijke manier tonen." 
+  },
+  {
+    "id": 3,
+    "title": "Mobile AR Porfolio",
+    "description": "Voor het vak Software Engineering ontwikkelden we als groep een Angular applicatie met een DotNet Api voor ziekenhuis Geel.",
+    "fullDescription": "Voor het vak AI.NET ontwikkelden we als groep een AI-gestuurde chatbot applicatie genaamd RoomyAI.\n\n De applicatie is een intelligente meeting- en ruimtebeheer assistent waarmee gebruikers via natuurlijke taal vergaderingen en vergaderzalen kunnen beheren. In plaats van traditionele formulieren en knoppen communiceert de gebruiker rechtstreeks met de AI om acties uit te voeren.\n\nVoor vergaderbeheer biedt de applicatie volledige functionaliteit. De AI kan nieuwe meetings aanmaken, bestaande meetings bijwerken zoals locatie, tijdstip, titel en beschrijving, en meetings verwijderen. Deelnemers kunnen worden toegevoegd aan een meeting waarbij het systeem automatisch controleert of een deelnemer al bestaat. Indien dat het geval is wordt de bestaande deelnemer gekoppeld, anders wordt er automatisch een nieuwe deelnemer aangemaakt. Deelnemers kunnen ook worden verwijderd uit meetings.\n\nVoor ruimtebeheer kan de gebruiker een overzicht opvragen van alle beschikbare vergaderzalen of de details van een specifieke zaal bekijken. Zaalinformatie kan worden aangepast en nieuwe zalen kunnen worden aangemaakt. Bij het verwijderen van een zaal worden gekoppelde afbeeldingen automatisch verwijderd uit de Azure Blob Storage.  \n\nAfbeeldingen voor zalen worden opgeslagen in Azure Blob Storage onder de naam van het bijhorende zaal-ID.",
+    "image": "/mobile-ar/1.png",
+    "extraImages": [
+      "/mobile-ar/1.png",
+      "/mobile-ar/2.png",
+      "/mobile-ar/3.png",
+      "/mobile-ar/4.png"
+    ],
+    "course": "AI.Net",
+    "team": "Groepsproject met 2 teamleden",
+    "technologies": [
+      {
+        "name": "DotNet Core",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
+      },
+      {
+        "name": "microsoft Sql Server",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg"
+      },
+      {
+        "name": "Azure",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg"
+      }
+    ],
+    "link": "",
+    "github": "",
+"features": [
+  "Ai aanspreekbaar via teams",
+  "Meetings aanmaken, bewerken en verwijderen via de AI-chatbot",
+  "Deelnemers toevoegen aan en verwijderen uit meetings met automatische controle op bestaande gebruikers",
+  "Volledig overzicht opvragen van alle meetings met gedetailleerde informatie per meeting",
+  "Vergaderzalen aanmaken, bewerken en verwijderen",
+  "Volledig overzicht opvragen van alle vergaderzalen met gedetailleerde informatie per zaal",
+  "Afbeeldingen van vergaderzalen opslaan en beheren via Azure Blob Storage",
+  "Automatisch verwijderen van zaalafbeeldingen bij het verwijderen van een zaal",
+  "Volledige bediening via natuurlijke taal zonder gebruik van traditionele formulieren"
+],
+"learnings": [
+  "Een AI-chatbot bouwen die via natuurlijke taal API-endpoints kan aanroepen",
+  "Integratie van een AI-core koppelen aan een bestaande REST API",
+  "Een Microsoft Teams-bot configureren en deployen via Azure Bot Service",
+  "Azure gebruiken voor hosting en deployment van de applicatie",
+  "Afbeeldingen opslaan en beheren via Azure Blob Storage",
+  "Gestructureerde kaartweergaven implementeren in plaats van platte tekstantwoorden"
+],
+    "contribution": "Voor dit project werkten we met twee delen: een API en een AI-core.\n\n Ik heb de volledige AI-core uitgewerkt. Dit omvat het koppelen van de AI-chatbot aan de API-endpoints, zodat de chatbot deze automatisch kan aanroepen op basis van wat de gebruiker vraagt. Daarnaast heb ik ervoor gezorgd dat de antwoorden en resultaten niet als gewone platte tekst worden weergegeven, maar als overzichtelijke kaarten die de informatie op een gebruiksvriendelijke manier tonen." 
+  },
+  {
+    "id": 4,
+    "title": "Project Skills 2 Hotel Kempenrust",
+    "description": "Voor het vak Skills Integration Lab 2 ontwikkelden we als groep een Laravel PHP-applicatie voor Hotel Kempenrust.",
+"fullDescription": "Voor het vak Skills Integration Lab 2 ontwikkelden we in groepsverband een Laravel PHP-applicatie voor Hotel Kempenrust, een platform dat het volledige beheer van zwemlessen en zwemactiviteiten centraliseert.\n\nVoor ouders biedt de applicatie de mogelijkheid om kinderen in te schrijven voor zwemlessen op verschillende niveaus, zwemfeestjes te reserveren en lestickets aan te kopen. Via een persoonlijk profiel kunnen ouders de gegevens van hun kinderen raadplegen en beheren. Een overzichtelijke agendapagina toont alle geplande lessen en evenementen in één oogopslag.\n\nVoor medewerkers geeft het platform een duidelijk overzicht van hun lessenrooster, inclusief de ingeschreven leerlingen per les. Daarnaast kunnen zij zwemattesten toekennen aan leerlingen die een niveau succesvol hebben afgerond.\n\nVoor administrators voorziet de applicatie uitgebreide CRUD-functionaliteit om alle data te beheren: van zwemlessen en beschikbare uren tot de etenswaren die bij een zwemfeestje besteld kunnen worden.",
+    "image": "/skill-2-2/homepage.png",
+    "extraImages": [
+      "/skill-2-2/planning.png",
+      "/skill-2-2/settings.png",
+      "/skill-2-2/zwemlessen.png",
+      "/skill-2-2/zwemfeestjes.png"
+    ],
+    "course": "Skills Integration Lab 2",
+    "team": "Groepsproject met 6 teamleden",
+    "technologies": [
+      {
+        "name": "Laravel",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
+      },
+      {
+        "name": "Sqlite",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg"
+      },
+      {
+        "name": "ViteJs",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
+      },
+      {
+        "name": "Alpine.js",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/alpinejs/alpinejs-original.svg"
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+      },
+      {
+        "name": "Livewire",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/livewire/livewire-original-wordmark.svg"
+      },
+      {
+        "name": "Jira",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg"
+      }
+    ],
+    "link": "",
+    "github": "",
+    "features": [
+      "Online ticketsysteem voor zwemlessen via Mollie",
+      "Kalender met informatie specifiek per type gebruiker",
+      "Alle informatie is bewerkbaar via CRUD-functionaliteit",
+      "Systeem om zwemfeestjes in te plannen",
+      "Volledig mailsysteem dat echte e-mails verstuurt naar echte adressen"
+    ],
+    "learnings": [
+      "Samenwerken aan een grote applicatie in teamverband",
+      "Database opzetten vanuit een ERD-diagram",
+      "Effectieve samenwerking in een agile team via Jira",
+      "Gebruiksvriendelijke UX/UI ontwerpen"
+    ],
+    "contribution": "Voor dit project werkten we op een agile manier, waardoor ik niet per se verantwoordelijk was voor specifieke pagina's, maar doorheen het hele project aan verschillende onderdelen heb meegewerkt. Zo heb ik de profielinstellingen uitgebreid met extra functionaliteit. Daarnaast heb ik het toevoegen van beurten als medewerker volledig uitgewerkt. Ook de navigatie en footer heb ik werkend gemaakt, inclusief voor mobiel. De homepage werd verbeterd voor alle verschillende gebruikers en alle pagina's voor ouders werden responsief gemaakt."
+  },
+  {
+    "id": 5,
+    "title": "Web Development – Solo Project Laravel",
+    "description": "Dit project ging over een fictieve ticketverkoopwebsite genaamd EventLocker. Op de website kun je zien welke tickets/events beschikbaar zijn en deze aankopen.",
+    "fullDescription": "Dit project ging over een fictieve ticketverkoopwebsite genaamd EventLocker. Op de website kun je zien welke tickets/events beschikbaar zijn, en na het aanmaken van een account kun je deze toevoegen aan je winkelmand en aankopen. Bij aankoop kwamen ze in je inventaris en kon je daar ook een QR-code zien die automatisch gegenereerd werd voor elk ticket, en je kon deze downloaden naar een bestand. Ook werden alle events rechtstreeks van de Ticketmaster API gehaald en in de database opgeslagen.",
+    "image": "/php-solo/home.png",
+    "extraImages": [
+      "/php-solo/default.png",
+      "/php-solo/shop.png",
+      "/php-solo/users.png",
+      "/php-solo/cart.png",
+      "/php-solo/faq.png"
+    ],
+    "course": "Web Development",
+    "team": "Solo project",
+    "technologies": [
+      {
+        "name": "Laravel",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
+      },
+      {
+        "name": "Sqlite",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg"
+      },
+      {
+        "name": "ViteJs",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
+      },
+      {
+        "name": "Alpine.js",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/alpinejs/alpinejs-original.svg"
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+      },
+      {
+        "name": "Livewire",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/livewire/livewire-original-wordmark.svg"
+      }
+    ],
+    "link": "",
+    "github": "",
+    "features": [
+      "Filter om te zoeken op verschillende beschikbare events",
+      "Pagina's voor medewerkers om de database via de website aan te passen",
+      "Koopfunctie voor de tickets",
+      "QR en bestand automatisch gegenereerd met ticketinformatie van gekochte tickets",
+      "Gebruik van de Ticketmaster API om events in de database te krijgen",
+      "Mailsysteem bij aankoop van tickets / Vragenformulier bij contact dat mails opstelt"
+    ],
+    "learnings": [
+      "Gebruik van een externe API binnen de applicatie",
+      "Genereren van bestanden en QR-codes binnen een Laravel-project via JavaScript",
+      "Het aanpassen van de Sqlite-database via een CRUD-model op de website",
+      "Gebruik van Livewire om pagina’s gedeeltelijk te updaten zonder volledige refresh",
+      "Het gebruik van e-mail, zoals het ontvangen en versturen van berichten"
+    ],
+    "contribution": "Solo project, alles in het project is door mij gemaakt."
+  },
+  {
+    "id": 6,
+    "title": "Project Skills 2 Duffalo's Voetbalapplicatie",
+    "description": "Voor het vak Skills Integration Lab 2 moesten we een webapplicatie ontwerpen en een prototype maken.",
+    "fullDescription": "Voor het vak Skills Integration Lab 2 moesten we een webapplicatie ontwerpen aan de hand van gesprekken met een klant, het gebruik van software modelleren diagrammen en het maken van een prototype in Figma met een goed design en basisfunctionaliteit.\n\n De applicatie is een beheersysteem voor de Buffalo Voetbalclub. \n\n Leden kunnen zich inschrijven via de applicatie en hun aanwezigheid registreren voor aankomende wedstrijden. Daarnaast is het mogelijk om statistieken van vorige wedstrijden te raadplegen en te bekijken of je al dan niet geselecteerd bent voor een wedstrijd.\n\n De voorzitter heeft de mogelijkheid om de selectie goed te keuren op basis van de ingegeven aanwezigheden. Vanuit de applicatie beheert de voorzitter ook alle clubgegevens, waaronder leden, e-mailadressen, posities, seizoenen, wedstrijden en statistieken.",
+    "image": "/skill-2-1/home.png",
+    "extraImages": [
+      "/skill-2-1/diagram.png",
+      "/skill-2-1/statistieken.png",
+      "/skill-2-1/profile.png",
+      "/skill-2-1/aanwezigheid.png",
+      "/skill-2-1/scores.png"
+    ],
+    "course": "Skills Integration Lab 2",
+    "team": "Groepsproject met 6 teamleden",
+    "technologies": [
+      {
+        "name": "Figma",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+      },
+      {
+        "name": "Jira",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg"
+      },
+      {
+        "name": "Unified Modeling Language",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unifiedmodelinglanguage/unifiedmodelinglanguage-original.svg"
+      }
+    ],
+    "link": "",
+    "github": "",
+    "features": [
+      "Systeem om voetbalwedstrijd uitslagen bij te houden",
+      "Groepspot systeem voor betalingen van de club",
+      "Half-geautomatiseerd wedstrijd opstelling systeem",
+      "Database met alle vorige voetbalseizoenen en wedstrijden om terug te vinden"
+    ],
+    "learnings": [
+      "Leren werken met Figma om prototypes te maken",
+      "Analyse- en ontwerprapport maken in groep",
+      "Leren de wensen van een klant duidelijk op papier te zetten",
+      "Het opstellen van een use-case diagram en dit omzetten naar een prototype"
+    ],
+    "contribution": "Voor dit project was het hoofddoel om de wensen en eisen van de klant op papier te krijgen, zodat in semester 2 een andere groep deze applicatie daadwerkelijk kan ontwikkelen. Daarom hebben we als groep vooral onderzocht hoe we de applicatie precies wilden maken. Iedereen werkte mee aan het use-case diagram en het bijhorende document. Zodra die twee onderdelen af waren, zijn we in Figma begonnen aan het prototype. In Figma heb ik de pagina’s 'Statistieken invullen', 'Home' en een deel van 'Statistieken bekijken' ontworpen. Binnen het team zorgde ik er ook voor dat iedereen op de hoogte was van welke taken tijdens de sprint afgerond moesten zijn en wie waarmee bezig was."
+  }
+]

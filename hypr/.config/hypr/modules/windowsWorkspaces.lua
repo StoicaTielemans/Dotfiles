@@ -60,6 +60,14 @@ hl.window_rule({
 	opacity = "1.0 override 1.0 override 1.0 override",
 })
 
+hl.window_rule({
+	name = "Fix-sisr-black-screen",
+	match = {
+		class = "^(SISR.*)$",
+		float = true,
+	},
+})
+
 -- Layer rules also return a handle.
 -- local overlayLayerRule = hl.layer_rule({
 --     name  = "no-anim-overlay",
