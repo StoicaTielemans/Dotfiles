@@ -31,7 +31,10 @@ const colors = {
 };
 
 const bar = {
+	height: 20,
+}
+
+const font = {
 	fontFamily: "JetBrainsMono Nerd Font",
-	fontSize: 16,
-	height: 30,
+	fontSize: 10,
 }

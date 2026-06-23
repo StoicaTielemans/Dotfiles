@@ -1,8 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
-import Quickshell.Io
-import Quickshell.Services.SystemTray
+import "components"
 import "config.js" as Config
 
 Scope {
@@ -18,7 +17,7 @@ Scope {
 
             color: Config.colors.base
             screen: modelData
-            implicitHeight: 30
+            implicitHeight: Config.bar.height
 
             anchors {
                 top: true
@@ -44,9 +43,9 @@ Scope {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
 
-                        Text {
+                        StyledText {
                             anchors.centerIn: parent
-                            text: root.time
+                            text: "test"
                         }
 
                     }
@@ -56,9 +55,9 @@ Scope {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
 
-                        Text {
+                        StyledText {
                             anchors.centerIn: parent
-                            text: root.time
+                            text: "test"
                         }
 
                     }
@@ -68,9 +67,9 @@ Scope {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
 
-                        Text {
+                        StyledText {
                             anchors.centerIn: parent
-                            text: root.time
+                            text: "test"
                         }
 
                     }
@@ -89,9 +88,9 @@ Scope {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
 
-                        Text {
+                        StyledText {
                             anchors.centerIn: parent
-                            text: root.time
+                            text: "test"
                         }
 
                     }
@@ -110,9 +109,9 @@ Scope {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
 
-                        Text {
+                        StyledText {
                             anchors.centerIn: parent
-                            text: root.time
+                            text: "test"
                         }
 
                     }
@@ -122,9 +121,9 @@ Scope {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
 
-                        Text {
+                        StyledText {
                             anchors.centerIn: parent
-                            text: root.time
+                            text: "test"
                         }
 
                     }
@@ -134,9 +133,9 @@ Scope {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
 
-                        Text {
+                        StyledText {
                             anchors.centerIn: parent
-                            text: root.time
+                            text: Time.time
                         }
 
                     }
@@ -147,25 +146,6 @@ Scope {
 
         }
 
-    }
-
-    Process {
-        id: dateProc
-
-        command: ["date"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: root.time = this.text
-        }
-
-    }
-
-    Timer {
-        interval: 1000
-        running: true
-        repeat: true
-        onTriggered: dateProc.running = true
     }
 
 }
