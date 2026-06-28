@@ -58,7 +58,6 @@ alias ll='eza -al'
 alias tree='eza --tree'
 alias df='duf'
 alias t='trash'
-
 alias scanIp='sudo arp-scan --localnet '
 alias tm='tmux'
 alias cheat='cht.sh'

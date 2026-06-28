@@ -3,6 +3,7 @@ import QtQuick.Layouts
 import Quickshell
 import "components"
 import "config.js" as Config
+import "modules"
 
 Scope {
     id: root
@@ -38,16 +39,8 @@ Scope {
                     Layout.fillHeight: true
                     spacing: 6
 
-                    Rectangle {
-                        color: 'orange'
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-
-                        StyledText {
-                            anchors.centerIn: parent
-                            text: "test"
-                        }
-
+                    HyprlandWindows {
+                        screen: modelData
                     }
 
                     Rectangle {
@@ -59,7 +52,6 @@ Scope {
                             anchors.centerIn: parent
                             text: "test"
                         }
-
                     }
 
                     Rectangle {
@@ -71,9 +63,7 @@ Scope {
                             anchors.centerIn: parent
                             text: "test"
                         }
-
                     }
-
                 }
 
                 RowLayout {
@@ -92,9 +82,7 @@ Scope {
                             anchors.centerIn: parent
                             text: "test"
                         }
-
                     }
-
                 }
 
                 RowLayout {
@@ -113,19 +101,6 @@ Scope {
                             anchors.centerIn: parent
                             text: "test"
                         }
-
-                    }
-
-                    Rectangle {
-                        color: 'teal'
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-
-                        StyledText {
-                            anchors.centerIn: parent
-                            text: "test"
-                        }
-
                     }
 
                     Rectangle {
@@ -137,15 +112,11 @@ Scope {
                             anchors.centerIn: parent
                             text: Time.time
                         }
-
                     }
 
+                    Tray {}
                 }
-
             }
-
         }
-
     }
-
 }

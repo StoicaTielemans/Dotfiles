@@ -751,6 +751,11 @@ do
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
     },
+    formatters = {
+      qmlformat = {
+        command = "/usr/lib/qt6/bin/qmlformat",
+      },
+    },
   })
 
   vim.keymap.set({ "n", "v" }, "<leader>f", function()
