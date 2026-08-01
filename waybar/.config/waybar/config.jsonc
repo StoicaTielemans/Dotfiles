@@ -32,8 +32,8 @@
     "pulseaudio",
     "custom/network-info",
     // "network",
-    "battery",
-    "backlight",
+    // "battery",
+    // "backlight",
     "clock",
     // "custom/swaync",
     "tray"

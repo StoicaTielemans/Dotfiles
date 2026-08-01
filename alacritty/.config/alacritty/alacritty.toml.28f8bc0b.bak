@@ -173,8 +173,3 @@ shell = { program = "/bin/zsh", args = [
   "-c",
   "fastfetch --config neofetch.jsonc; exec zsh",
 ] }
-
-[[keyboard.bindings]]
-key = "Return"
-mods = "Shift"
-chars = "\u001B\r"

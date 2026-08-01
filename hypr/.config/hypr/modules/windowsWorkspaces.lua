@@ -15,57 +15,57 @@ hl.workspace_rule({ workspace = "10", monitor = "HDMI-A-2" })
 
 -- Ignore maximize requests from all apps. You'll probably like this.
 local suppressMaximizeRule = hl.window_rule({
-	name = "suppress-maximize-events",
-	match = { class = ".*" },
+  name = "suppress-maximize-events",
+  match = { class = ".*" },
 
-	suppress_event = "maximize",
+  suppress_event = "maximize",
 })
 -- suppressMaximizeRule:set_enabled(false)
 
 -- Fix some dragging issues with XWayland
 hl.window_rule({
-	name = "fix-xwayland-drags",
-	match = {
-		class = "^$",
-		title = "^$",
-		xwayland = true,
-		float = true,
-		fullscreen = false,
-		pin = false,
-	},
+  name = "fix-xwayland-drags",
+  match = {
+    class = "^$",
+    title = "^$",
+    xwayland = true,
+    float = true,
+    fullscreen = false,
+    pin = false,
+  },
 
-	no_focus = true,
+  no_focus = true,
 })
 
 local no_opacity_apps = {
-	"[Hh]elium",
-	"[Ff]irefox",
-	"[Cc]hromium",
-	"VSCodium",
-	"[Ss]creeps",
-	"[Vv]esktop",
-	"[Kk]rita",
-	"[Mm]angayomi",
-	"[Dd]iscord",
-	"[Zz]en",
-	"[Ff]loorp.*",
-	"[Mm]ultiViewer",
+  "[Hh]elium",
+  "[Ff]irefox",
+  "[Cc]hromium",
+  "VSCodium",
+  "[Ss]creeps",
+  "[Vv]esktop",
+  "[Kk]rita",
+  "[Mm]angayomi",
+  "[Dd]iscord",
+  "[Zz]en",
+  "[Ff]loorp.*",
+  "[Mm]ultiViewer",
 }
 
 hl.window_rule({
-	name = "remove-opacity",
-	match = {
-		class = "^(" .. table.concat(no_opacity_apps, "|") .. ")$",
-	},
-	opacity = "1.0 override 1.0 override 1.0 override",
+  name = "remove-opacity",
+  match = {
+    class = "^(" .. table.concat(no_opacity_apps, "|") .. ")$",
+  },
+  opacity = "1.0 override 1.0 override 1.0 override",
 })
 
 hl.window_rule({
-	name = "Fix-sisr-black-screen",
-	match = {
-		class = "^(SISR.*)$",
-		float = true,
-	},
+  name = "Fix-sisr-black-screen",
+  match = {
+    class = "^(SISR.*)$",
+    float = true,
+  },
 })
 
 -- Layer rules also return a handle.
@@ -78,9 +78,9 @@ hl.window_rule({
 
 -- Hyprland-run windowrule
 hl.window_rule({
-	name = "move-hyprland-run",
-	match = { class = "hyprland-run" },
+  name = "move-hyprland-run",
+  match = { class = "hyprland-run" },
 
-	move = "20 monitor_h-120",
-	float = true,
+  move = "20 monitor_h-120",
+  float = true,
 })
