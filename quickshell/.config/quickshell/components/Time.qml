@@ -1,6 +1,5 @@
 import QtQuick
 import Quickshell
-import Quickshell.Io
 // with this line our type becomes a Singleton
 pragma Singleton
 
@@ -8,25 +7,27 @@ pragma Singleton
 Singleton {
     id: root
 
-    property string time
+    property string time: formatTime()
 
-    Process {
-        id: dateProc
+    function pad(n) {
+        return n < 10 ? "0" + n : String(n);
+    }
 
-        command: ["date", "+  %d/%m/%y    %H:%M:%S"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: root.time = this.text
-        }
-
+    function formatTime() {
+        const now = new Date();
+        const dd = pad(now.getDate());
+        const mm = pad(now.getMonth() + 1);
+        const yy = pad(now.getFullYear() % 100);
+        const hh = pad(now.getHours());
+        const mi = pad(now.getMinutes());
+        const ss = pad(now.getSeconds());
+        return "  " + dd + "/" + mm + "/" + yy + "    " + hh + ":" + mi + ":" + ss;
     }
 
     Timer {
         interval: 1000
         running: true
         repeat: true
-        onTriggered: dateProc.running = true
+        onTriggered: root.time = root.formatTime()
     }
-
 }

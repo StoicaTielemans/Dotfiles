@@ -3,7 +3,7 @@ import Quickshell
 import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
-import "../config.js" as Config
+import "../../config.js" as Config
 
 Item {
     required property var screen
@@ -39,7 +39,7 @@ Item {
     RowLayout {
         id: row
         anchors.centerIn: parent
-        spacing: 6
+        spacing: Config.bar.itemSpacing
 
         Repeater {
             model: {
@@ -69,7 +69,7 @@ Item {
 
                 Behavior on color {
                     ColorAnimation {
-                        duration: 150
+                        duration: Config.animation.normal
                     }
                 }
 
@@ -78,11 +78,11 @@ Item {
                     anchors.centerIn: parent
                     text: kanjiMap[String(modelData)] ?? String(modelData)
                     color: isActive ? (isHovered ? Config.colors.lavender : Config.colors.pink) : Config.colors.base
-                    font.pixelSize: Config.font.fontSize - 0.5
+                    font.pixelSize: Config.font.sizes.sm
                     font.bold: true
                     Behavior on color {
                         ColorAnimation {
-                            duration: 150
+                            duration: Config.animation.normal
                         }
                     }
                 }
