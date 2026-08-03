@@ -27,7 +27,7 @@ Item {
     StyledText {
         id: label
         anchors.centerIn: parent
-        text: root.icon() + "  " + AudioMonitor.sourceVolumePercent + "%"
+        text: root.icon() + " " + AudioMonitor.sourceVolumePercent + "%"
         color: Config.colors.blue
         font.pixelSize: Config.font.sizes.label
         font.bold: true

@@ -21,7 +21,7 @@ Singleton {
         const hh = pad(now.getHours());
         const mi = pad(now.getMinutes());
         const ss = pad(now.getSeconds());
-        return "  " + dd + "/" + mm + "/" + yy + "    " + hh + ":" + mi + ":" + ss;
+        return "󰃮 " + dd + "/" + mm + "/" + yy + " 󰥔 " + hh + ":" + mi + ":" + ss;
     }
 
     Timer {

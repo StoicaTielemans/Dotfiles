@@ -33,7 +33,7 @@ Item {
     StyledText {
         id: label
         anchors.centerIn: parent
-        text: root.icon() + "  " + AudioMonitor.volumePercent + "%"
+        text: root.icon() + " " + AudioMonitor.volumePercent + "%"
         color: Config.colors.sky
         font.pixelSize: Config.font.sizes.label
         font.bold: true

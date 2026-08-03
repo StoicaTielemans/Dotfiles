@@ -31,7 +31,7 @@ Item {
     StyledText {
         id: label
         anchors.centerIn: parent
-        text: root.icon() + (NetworkMonitor.connected ? "  ↓" + NetworkMonitor.rxRateText + "  ↑" + NetworkMonitor.txRateText : " Disconnected")
+        text: root.icon() + (NetworkMonitor.connected ? " ↓" + NetworkMonitor.rxRateText + " ↑" + NetworkMonitor.txRateText : " Disconnected")
         color: Config.colors.green
         font.pixelSize: Config.font.sizes.label
         font.bold: true

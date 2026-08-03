@@ -71,124 +71,140 @@ PopupWindow {
             Repeater {
                 model: root.visible ? MediaPlayer.players : []
 
-                ColumnLayout {
+                RowLayout {
                     id: playerCard
                     required property var modelData
-                    spacing: 4
+                    spacing: 10
 
-                    StyledText {
-                        Layout.maximumWidth: 300
-                        elide: Text.ElideRight
-                        text: "󰝚 " + (playerCard.modelData.trackArtist ? playerCard.modelData.trackArtist + " - " : "") + (playerCard.modelData.trackTitle || playerCard.modelData.identity || "Unknown")
-                        color: Config.colors.yellow
-                        font.bold: true
-                        font.pixelSize: Config.font.sizes.label
+                    Image {
+                        id: thumbnail
+                        Layout.preferredWidth: 56
+                        Layout.preferredHeight: 56
+                        Layout.alignment: Qt.AlignTop
+                        visible: status === Image.Ready
+                        source: playerCard.modelData.trackArtUrl || ""
+                        fillMode: Image.PreserveAspectCrop
+                        asynchronous: true
+                        smooth: true
                     }
 
-                    RowLayout {
-                        Layout.fillWidth: true
-                        visible: root.hasDuration(playerCard.modelData)
-                        spacing: 6
+                    ColumnLayout {
+                        spacing: 4
 
                         StyledText {
-                            text: root.formatTime(playerCard.modelData.position)
-                            color: Config.colors.subtext0
-                            font.pixelSize: Config.font.sizes.sm
-                        }
-
-                        Item {
-                            id: timelineTrack
-                            Layout.fillWidth: true
-                            Layout.preferredWidth: 200
-                            implicitHeight: 4
-
-                            Rectangle {
-                                anchors.fill: parent
-                                radius: 2
-                                color: Config.colors.surface1
-                            }
-
-                            Rectangle {
-                                anchors {
-                                    left: parent.left
-                                    top: parent.top
-                                    bottom: parent.bottom
-                                }
-                                radius: 2
-                                color: Config.colors.yellow
-                                width: playerCard.modelData.length > 0 ? parent.width * Math.min(1, playerCard.modelData.position / playerCard.modelData.length) : 0
-                            }
-
-                            MouseArea {
-                                anchors.fill: parent
-                                enabled: playerCard.modelData.canSeek
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: mouse => {
-                                    if (playerCard.modelData.length > 0)
-                                        playerCard.modelData.position = (mouse.x / timelineTrack.width) * playerCard.modelData.length;
-                                }
-                            }
-                        }
-
-                        StyledText {
-                            text: root.formatTime(playerCard.modelData.length)
-                            color: Config.colors.subtext0
-                            font.pixelSize: Config.font.sizes.sm
-                        }
-                    }
-
-                    RowLayout {
-                        Layout.alignment: Qt.AlignHCenter
-                        spacing: 14
-
-                        StyledText {
-                            text: "󰒮"
-                            color: playerCard.modelData.canGoPrevious ? Config.colors.yellow : Config.colors.overlay0
-                            font.pixelSize: Config.font.sizes.heading
-
-                            MouseArea {
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                enabled: playerCard.modelData.canGoPrevious
-                                onClicked: MediaPlayer.previous(playerCard.modelData)
-                            }
-                        }
-
-                        StyledText {
-                            text: playerCard.modelData.isPlaying ? "󰏤" : "󰐊"
+                            Layout.maximumWidth: 300
+                            elide: Text.ElideRight
+                            text: "󰝚 " + (playerCard.modelData.trackArtist ? playerCard.modelData.trackArtist + " - " : "") + (playerCard.modelData.trackTitle || playerCard.modelData.identity || "Unknown")
                             color: Config.colors.yellow
-                            font.pixelSize: Config.font.sizes.heading
+                            font.bold: true
+                            font.pixelSize: Config.font.sizes.label
+                        }
 
-                            MouseArea {
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: MediaPlayer.togglePlaying(playerCard.modelData)
+                        RowLayout {
+                            Layout.fillWidth: true
+                            visible: root.hasDuration(playerCard.modelData)
+                            spacing: 6
+
+                            StyledText {
+                                text: root.formatTime(playerCard.modelData.position)
+                                color: Config.colors.subtext0
+                                font.pixelSize: Config.font.sizes.sm
+                            }
+
+                            Item {
+                                id: timelineTrack
+                                Layout.fillWidth: true
+                                Layout.preferredWidth: 200
+                                implicitHeight: 4
+
+                                Rectangle {
+                                    anchors.fill: parent
+                                    radius: 2
+                                    color: Config.colors.surface1
+                                }
+
+                                Rectangle {
+                                    anchors {
+                                        left: parent.left
+                                        top: parent.top
+                                        bottom: parent.bottom
+                                    }
+                                    radius: 2
+                                    color: Config.colors.yellow
+                                    width: playerCard.modelData.length > 0 ? parent.width * Math.min(1, playerCard.modelData.position / playerCard.modelData.length) : 0
+                                }
+
+                                MouseArea {
+                                    anchors.fill: parent
+                                    enabled: playerCard.modelData.canSeek
+                                    cursorShape: Qt.PointingHandCursor
+                                    onClicked: mouse => {
+                                        if (playerCard.modelData.length > 0)
+                                            playerCard.modelData.position = (mouse.x / timelineTrack.width) * playerCard.modelData.length;
+                                    }
+                                }
+                            }
+
+                            StyledText {
+                                text: root.formatTime(playerCard.modelData.length)
+                                color: Config.colors.subtext0
+                                font.pixelSize: Config.font.sizes.sm
                             }
                         }
 
-                        StyledText {
-                            text: "󰒭"
-                            color: playerCard.modelData.canGoNext ? Config.colors.yellow : Config.colors.overlay0
-                            font.pixelSize: Config.font.sizes.heading
+                        RowLayout {
+                            Layout.alignment: Qt.AlignHCenter
+                            spacing: 14
 
-                            MouseArea {
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                enabled: playerCard.modelData.canGoNext
-                                onClicked: MediaPlayer.next(playerCard.modelData)
+                            StyledText {
+                                text: "󰒮"
+                                color: playerCard.modelData.canGoPrevious ? Config.colors.yellow : Config.colors.overlay0
+                                font.pixelSize: Config.font.sizes.heading
+
+                                MouseArea {
+                                    anchors.fill: parent
+                                    cursorShape: Qt.PointingHandCursor
+                                    enabled: playerCard.modelData.canGoPrevious
+                                    onClicked: MediaPlayer.previous(playerCard.modelData)
+                                }
                             }
-                        }
 
-                        StyledText {
-                            text: MediaPlayer.isMuted(playerCard.modelData) ? "󰖁" : "󰕾"
-                            color: playerCard.modelData.volumeSupported ? Config.colors.yellow : Config.colors.overlay0
-                            font.pixelSize: Config.font.sizes.heading
+                            StyledText {
+                                text: playerCard.modelData.isPlaying ? "󰏤" : "󰐊"
+                                color: Config.colors.yellow
+                                font.pixelSize: Config.font.sizes.heading
 
-                            MouseArea {
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                enabled: playerCard.modelData.volumeSupported
-                                onClicked: MediaPlayer.toggleMute(playerCard.modelData)
+                                MouseArea {
+                                    anchors.fill: parent
+                                    cursorShape: Qt.PointingHandCursor
+                                    onClicked: MediaPlayer.togglePlaying(playerCard.modelData)
+                                }
+                            }
+
+                            StyledText {
+                                text: "󰒭"
+                                color: playerCard.modelData.canGoNext ? Config.colors.yellow : Config.colors.overlay0
+                                font.pixelSize: Config.font.sizes.heading
+
+                                MouseArea {
+                                    anchors.fill: parent
+                                    cursorShape: Qt.PointingHandCursor
+                                    enabled: playerCard.modelData.canGoNext
+                                    onClicked: MediaPlayer.next(playerCard.modelData)
+                                }
+                            }
+
+                            StyledText {
+                                text: MediaPlayer.isMuted(playerCard.modelData) ? "󰖁" : "󰕾"
+                                color: playerCard.modelData.volumeSupported ? Config.colors.yellow : Config.colors.overlay0
+                                font.pixelSize: Config.font.sizes.heading
+
+                                MouseArea {
+                                    anchors.fill: parent
+                                    cursorShape: Qt.PointingHandCursor
+                                    enabled: playerCard.modelData.volumeSupported
+                                    onClicked: MediaPlayer.toggleMute(playerCard.modelData)
+                                }
                             }
                         }
                     }
