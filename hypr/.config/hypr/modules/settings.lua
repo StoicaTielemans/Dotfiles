@@ -4,7 +4,8 @@ local settings = {
   menu = "rofi -show drun",
   browser = "helium-browser",
   chat = "discord",
-  logout = "wlogout",
+  logout = "quickshell ipc call powermenu toggle",
+  -- logout = "wlogout",
 }
 -- chat = "flatpak run com.discordapp.Discord",
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
