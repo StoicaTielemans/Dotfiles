@@ -4,7 +4,9 @@ local settings = {
   menu = "rofi -show drun",
   browser = "helium-browser",
   chat = "discord",
-  logout = "quickshell ipc call powermenu toggle",
+  logout = "pkill -SIGUSR1 -x customBar",
+  bar = "~/Code/github.com/StoicaTielemans/GridBar/build/gridBar",
+  -- logout = "quickshell ipc call powermenu toggle",
   -- logout = "wlogout",
 }
 -- chat = "flatpak run com.discordapp.Discord",
