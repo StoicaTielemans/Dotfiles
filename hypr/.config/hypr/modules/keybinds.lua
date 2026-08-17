@@ -13,7 +13,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(settings.fileManager))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(settings.browser))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(settings.chat))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(settings.menu))
-hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd(settings.logout))
+hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("pkill -SIGUSR1 -x gridBar 2>/dev/null"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
 
 -- bluescreen filter
