@@ -5,7 +5,7 @@ local settings = {
   browser = "helium-browser",
   chat = "discord",
   logout = "pkill -SIGUSR1 -x customBar",
-  bar = "~/Code/github.com/StoicaTielemans/GridBar/build/gridBar",
+  bar = "~/Code/github.com/StoicaTielemans/StickBar/build/stickBar",
   -- logout = "quickshell ipc call powermenu toggle",
   -- logout = "wlogout",
 }
