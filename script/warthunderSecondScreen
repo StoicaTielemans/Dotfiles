@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+#
+# minimap-capture.sh
+# Captures a screen region (e.g. the War Thunder minimap) and streams it
+# live into a borderless, always-on-top mpv window you can drag to a
+# second monitor.
+#
+# Usage:
+#   ./minimap-capture.sh
+#
+# First run will prompt you to drag-select the minimap region with slurp.
+# Press Ctrl+C to stop.
+
+set -euo pipefail
+
+# ---- Config ---------------------------------------------------------------
+# Optional: pin the mpv window to a specific spot instead of dragging it
+# manually. Format: WIDTHxHEIGHT+X+Y  (leave empty to disable and drag it
+# yourself). Run `wlr-randr` to find your second monitor's offset.
+GEOMETRY=""   # e.g. GEOMETRY="960x550+1920+0"
+
+# ---- Dependency check -------------------------------------------------------
+for cmd in wf-recorder slurp mpv; do
+  if ! command -v "$cmd" &>/dev/null; then
+    echo "Error: '$cmd' is not installed or not in PATH." >&2
+    exit 1
+  fi
+done
+
+# ---- Build mpv args ---------------------------------------------------------
+MPV_ARGS=(--no-border --ontop)
+if [[ -n "$GEOMETRY" ]]; then
+  MPV_ARGS+=(--geometry="$GEOMETRY")
+fi
+
+echo "Drag-select the minimap region now..."
+
+# ---- Capture and stream via a named pipe -----------------------------------
+# We deliberately avoid `-f -` (stdout). wf-recorder's stdout/pipe code path
+# has a color-format renegotiation bug in some builds that produces a black
+# picture, even though the exact same capture works fine written to a file.
+# A FIFO makes wf-recorder think it's writing to a real file (the working
+# path) while still letting mpv read it live.
+#
+# -y            overwrite/skip confirmation prompt
+# --no-dmabuf   force CPU copy (more reliable for this kind of capture)
+# -c rawvideo   no encoding, minimal latency
+# The .nut extension makes wf-recorder auto-select the NUT container,
+# matching the exact setup that already worked in your file test.
+
+FIFO="/tmp/minimap-capture-$$.nut"
+mkfifo "$FIFO"
+
+cleanup() {
+  kill "${REC_PID:-}" 2>/dev/null || true
+  rm -f "$FIFO"
+}
+trap cleanup EXIT INT TERM
+
+wf-recorder -y --no-dmabuf -g "$(slurp)" -r 30 --no-damage -c rawvideo -f "$FIFO" &
+REC_PID=$!
+
+mpv --profile=low-latency "${MPV_ARGS[@]}" "$FIFO"
