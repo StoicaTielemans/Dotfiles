@@ -35,14 +35,6 @@ setopt appendhistory sharehistory hist_ignore_space \
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-# =====================
-# Keybindings
-# =====================
-if [[ -z "$NVIM" ]]; then
-  bindkey -v
-fi
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
 
 # =====================
 # Editor
@@ -157,10 +149,11 @@ if [[ -f "$HOME/.local/share/zinit/zinit.git/zinit.zsh" ]]; then
     zinit light zsh-users/zsh-autosuggestions
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#fff,bg=#11111b,bold,underline"
 
-    if [[ -z "$NVIM" ]]; then
-        zinit ice depth=1
-        zinit light jeffreytse/zsh-vi-mode
-    fi
+    # old wierd vi mode in terminal
+    # if [[ -z "$NVIM" ]]; then
+    #     zinit ice depth=1
+    #     zinit light jeffreytse/zsh-vi-mode
+    # fi
 
     zinit light zsh-users/zsh-syntax-highlighting
 fi
@@ -190,6 +183,14 @@ zstyle :compinstall filename '/home/stick/.zshrc'
 # =====================
 # Keyboard: Vi mode (Alacritty / Zsh)
 # =====================
-bindkey -v
+# emacs mode no wierd nvim mode in terminal
+bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+# =====================
+# Open command in Neovim on double Esc
+# =====================
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '\e\e' edit-command-line
+echo -ne '\e[5 q'

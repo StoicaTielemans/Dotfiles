@@ -6,7 +6,6 @@ local settings = {
   chat = "discord",
   logout = "pkill -SIGUSR1 -x customBar",
   bar = "~/Code/github.com/StoicaTielemans/StickBar/build/stickBar",
-  -- logout = "quickshell ipc call powermenu toggle",
   -- logout = "wlogout",
 }
 -- chat = "flatpak run com.discordapp.Discord",
