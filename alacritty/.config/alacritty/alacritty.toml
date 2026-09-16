@@ -77,13 +77,6 @@ y = 0
 history = 10000
 multiplier = 3
 
-# =====================
-# Cursor
-# =====================
-[cursor]
-style = "Block"
-unfocused_hollow = true
-blink_interval = 500
 
 # =====================
 # Bell (disable visual bell)

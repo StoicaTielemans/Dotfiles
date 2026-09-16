@@ -9,20 +9,50 @@ sort_sensitive = false
 sort_reverse = false
 sort_dir_first = true
 sort_translit = false
-linemode = "size"
+linemode = "size_perm"
 show_hidden = false
 show_symlink = true
 scrolloff = 5
 mouse_events = ["click", "scroll"]
 title_format = "Yazi: {cwd}"
 
-# git 
-# [[plugin.prepend_fetchers]]
-# id = "git"
-# name = "*"
-# run = "git"
-#
-# [[plugin.prepend_fetchers]]
-# id = "git"
-# name = "*/"
-# run = "git"
+# ─────────────────────────────────────────────────────────────
+# Openers — extra programs offered in the Shift-O "open with" menu.
+# Yazi keeps its own built-in defaults (edit/open/play/extract/reveal)
+# for the plain `o` key; these just get appended as extra choices.
+# ─────────────────────────────────────────────────────────────
+[opener]
+krita = [{ run = 'krita %s', desc = "Krita", orphan = true, for = "linux" }]
+feh = [{ run = 'feh %s', desc = "Feh", orphan = true, for = "linux" }]
+mpv = [{ run = 'mpv %s', desc = "MPV", orphan = true, for = "linux" }]
+helium = [{ run = 'helium-browser %s', desc = "Helium", orphan = true, for = "linux" }]
+ark = [{ run = 'ark %s', desc = "Ark", orphan = true, for = "linux" }]
+
+# ─────────────────────────────────────────────────────────────
+# Rules — first match wins, so these must PREPEND the defaults
+# to be seen at all. Each `use` list repeats yazi's own default
+# for that mime first (so `o` behaves exactly as before), then
+# adds the extra program(s) so they show up under Shift-O.
+# ─────────────────────────────────────────────────────────────
+[open]
+prepend_rules = [
+  # Text & scripts (yazi already matches most scripts as text/x-*)
+  { mime = "application/{json,ndjson,javascript,wine-extension-ini}", use = ["edit", "reveal"] },
+
+  # Images
+  { mime = "image/*", use = ["open", "krita", "feh", "reveal"] },
+
+  # Video / audio
+  { mime = "{audio,video}/*", use = ["play", "mpv", "reveal"] },
+
+  # Browser stuff — pdf and html
+  { mime = "application/pdf", use = ["open", "helium", "reveal"] },
+  { mime = "text/html", use = ["edit", "helium", "reveal"] },
+
+  # Archives
+  { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [
+    "extract",
+    "ark",
+    "reveal",
+  ] },
+]

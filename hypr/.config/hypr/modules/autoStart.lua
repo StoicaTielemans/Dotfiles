@@ -17,7 +17,8 @@ hl.on("hyprland.start", function()
   -- background
   hl.exec_cmd("awww-daemon & sleep 1 && ~/.config/hypr/scripts/awww_background.sh ~/Pictures/Background")
   -- authentication agent
-  hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &")
+  hl.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent")
+
   -- remap for shifter to make that work
   hl.exec_cmd("python3 ~/Documents/shifter_uinput.py")
   -- clipboard deamon

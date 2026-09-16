@@ -1,6 +1,6 @@
 local settings = {
-  terminal = "alacritty",
-  fileManager = "nemo",
+  terminal = "ghostty",
+  fileManager = "Yazi",
   menu = "rofi -show drun",
   browser = "helium-browser",
   chat = "discord",
@@ -14,5 +14,6 @@ hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("GTK_USE_PORTAL", "1")
 hl.env("GTK_THEME", "catppuccin-mocha-lavender-standard+default")
+hl.env("PRESSURE_VESSEL_IMPORT_OPENXR_1_RUNTIMES", "1")
 
 return settings
