@@ -1,6 +1,6 @@
 local settings = {
   terminal = "ghostty",
-  fileManager = "Yazi",
+  fileManager = "ghostty -e zsh -i -c 'y; exec zsh'",
   menu = "rofi -show drun",
   browser = "helium-browser",
   chat = "discord",
